@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+@mixin groundColor($groundColor : #2ED87B) {
+background-color: $groundColor ;
+}
+.home{
+       .home-container{
+        display: grid;
+        grid-template-columns:1fr 2fr; 
+        @include groundColor;
+        }
+}

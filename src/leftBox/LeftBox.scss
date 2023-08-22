@@ -1,0 +1,17 @@
+.leftBox{
+    margin: 10px 0 0 10px;
+    .leftBox-logo{
+        display: flex;
+        flex-direction: column;
+        img{
+            width:170px;
+            height: 48px;
+            margin: 20px 0 0 20px;
+        }
+    }
+    .leftBox-search{
+        margin: 50px 0 0 20px;
+        border-radius: 100px;
+      
+    }
+}
