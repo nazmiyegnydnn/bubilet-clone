@@ -10,11 +10,9 @@ const Home = () => {
         <div className='leftBox'>
         <LeftBox/>
     </div>
-    <div className='rightBox'>
         <div className='rightBox'>
          <RightBox/>
         </div>
-    </div>
     </div>
     </div>
   )

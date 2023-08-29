@@ -8,7 +8,10 @@
 .home{
     height: 100vh;
     background-color: #2ED87B ;
+    color: white;
+
        .home-container{
+        height: 100%;
         display: grid;
         grid-template-columns:1fr 2fr; 
        

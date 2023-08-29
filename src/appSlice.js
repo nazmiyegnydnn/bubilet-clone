@@ -3,20 +3,80 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = { //dizimiz depomuz burada
     cities: [
         {
-            id:1,
+            id:34,
+            name: "İstanbul"
+        },
+        {
+            id:35,
+            name: "İzmir"
+        },
+        {
+            id:6,
             name: "Ankara"
         },
         {
-            id:2,
-            name: "Adıyaman"
-        },
-        {
+            id:1,
+            name: "Adana"
+        },       {
             id:3,
             name: "Afyonkarahisar"
         },
         {
             id:4,
             name: "Ağrı"
+        },       {
+            id:5,
+            name: "Amasya"
+        },
+        {
+            id:7,
+            name: "Antalya"
+        },
+        {
+            id:9,
+            name: "Aydın"
+        },
+        {
+            id:10,
+            name: "Balıkesir"
+        },
+        {
+            id:14,
+            name: "Bolu"
+        },       {
+            id:16,
+            name: "Bursa"
+        },
+        {
+            id:17,
+            name: "Çanakkale"
+        },
+        {
+            id:19,
+            name: "Çorum"
+        },
+        {
+            id:20,
+            name: "Denizli"
+        },
+        {
+            id:21,
+            name: "Diyarbakır"
+        },       {
+            id:22,
+            name: "Edirne"
+        },
+        {
+            id:25,
+            name: "Erzurum"
+        },
+        {
+            id:26,
+            name: "Eskişehir"
+        },
+        {
+            id:27,
+            name: "Gaziantep"
         }
     ],
 }
@@ -26,14 +86,15 @@ const initialState = { //dizimiz depomuz burada
     name: 'app',  
     initialState,
     reducers: {
-        //     // kull olay //
-        //      cities : (state , action)  => {
-        //     state.category = [...state.category , {id:3 , name: "c3"}]  
-        // }
+            
+        filterCities : (state , action)  => {
+        const filterData = state.cities?.filter((el) =>el.name?.toLocaleLowerCase()?.includes(action.payload.toLocaleLowerCase()));
+        state.cities = filterData
+        }
         
     }
   })
 
-  export const {} = appSlice.actions  
+  export const {filterCities} = appSlice.actions  
 
   export default appSlice.reducer  //appslice kendi dosyomızın ismine göre değişitir.
