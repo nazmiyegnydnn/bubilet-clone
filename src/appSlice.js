@@ -1,4 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit' 
+import Semicenk from '././images/Semicenk.jpeg';
+import Gulsen from '././images/Gulsen.jpg';
+import YildizTilbe from '././images/YildizTilbe.png';
+import MelikeSahin from '././images/MelikeSahin.png';
+import Gazapizm from '././images/Gazapizm.jpg';
+import KenanDogulu from '././images/KenenDogulu.jpg';
+import CemAdrian from '././images/CemAdrian.jpg';
+import ErolEvgin from '././images/ErolEvgin.jpg';
+import Athena from '././images/Athena.jpg';
+import Edis from '././images/Edis.jpg';
+
+
+
 
 const initialState = { //dizimiz depomuz burada
     cities: [
@@ -79,6 +92,92 @@ const initialState = { //dizimiz depomuz burada
             name: "Gaziantep"
         }
     ],
+    events:[
+        {
+            img:Semicenk,
+            title:"Semicenk Konseri",
+            location:"Armada",
+            date:"23 Eylül",
+            price:"430 TL"
+        },
+        {
+            img:Gulsen,
+            title:"Gülşen Konseri",
+            location:"Congresiıum",
+            date:"15 Eylül",
+            price:"299 TL"
+        },
+        {
+            img:YildizTilbe,
+            title:"Yıldız Tilbe Konseri",
+            location:"Congresiıum",
+            date:"6 Ekim",
+            price:"299 TL"
+        },
+        {
+            img:MelikeSahin,
+            title:"Melike Şahin Konseri",
+            location:"Armada",
+            date:"17 Eylül",
+            price:"400 TL"
+        },
+        {
+            img:Gazapizm,
+            title:"Gazapizm Konseri",
+            location:"Oran Açıkhava",
+            date:"30 Eylül",
+            price:"350 TL"
+        },
+        {
+            img:KenanDogulu,
+            title:"Kenan Doğulu Konseri",
+            location:"Atılım Üniversitesi",
+            date:"1 Eylül",
+            price:"728 TL"
+        },
+        {
+            img:CemAdrian,
+            title:"Cem Adrian Konseri",
+            location:"MEB Şura Salonu",
+            date:"17 Eylül",
+            price:"388 TL"
+        },
+        {
+            img:ErolEvgin,
+            title:"Erol Evgin Konseri",
+            location:"Atılım Üniversitesi",
+            date:"8 Eylül",
+            price:"339 TL"
+        },   
+         {
+            img:Athena,
+            title:"Athena Konseri",
+            location:"Armada",
+            date:"3 Eylül",
+            price:"250 TL"
+        },
+        {
+            img:Edis,
+            title:"Edis Konseri",
+            location:"Congresiıum",
+            date:"21 Ekim",
+            price:"299 TL"
+        },
+        {
+            img:Edis,
+            title:"Edis Konseri",
+            location:"Congresiıum",
+            date:"21 Ekim",
+            price:"299 TL"
+        },
+        {
+            img:Edis,
+            title:"Edis Konseri",
+            location:"Congresiıum",
+            date:"21 Ekim",
+            price:"299 TL"
+        }
+    ]
 }
   
 
