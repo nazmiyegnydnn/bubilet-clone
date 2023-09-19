@@ -75,9 +75,18 @@ const initialState = { //dizimiz depomuz burada
         {
             id:21,
             name: "Diyarbakır"
-        },       {
+        },
+        {
             id:22,
             name: "Edirne"
+        },
+        {
+            id:23,
+            name: "Elazığ"
+        },
+        {
+            id:24,
+            name: "Erzincan"
         },
         {
             id:25,
@@ -90,7 +99,60 @@ const initialState = { //dizimiz depomuz burada
         {
             id:27,
             name: "Gaziantep"
+        },
+        {
+            id:28,
+            name: "Giresun"
+        },
+        {
+            id:31,
+            name: "Hatay"
+        },
+        {
+            id:32,
+            name: "Isparta"
+        },
+        {
+            id:33,
+            name: "Mersin"
+        },
+        {
+            id:36,
+            name: "Kars"
+        },
+        {
+            id:38,
+            name: "Kayseri"
+        },
+        {
+            id:39,
+            name: "Kırklareli"
+        },
+        {
+            id:41,
+            name: "Kocaeli"
+        },
+        {
+            id:42,
+            name: "Konya"
+        },
+        {
+            id:43,
+            name: "Kütahya"
+        },    
+        {
+            id:44,
+            name: "Malatya"
+        },
+        {
+            id:45,
+            name: "Manisa"
+        },
+        {
+            id:46,
+            name: "Kahramanmaraş"
         }
+     
     ],
     events:[
         {

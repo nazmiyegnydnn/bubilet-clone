@@ -14,7 +14,8 @@ import blogIcon from '../../images/blogIcon.png';
 import { SearchOutlined } from "@ant-design/icons";
 import { Radio, Input, Tooltip, Button, Carousel ,Dropdown } from "antd";
 import { useParams } from "react-router-dom";
-import {useSelector } from 'react-redux'  
+import {useSelector } from 'react-redux'
+import Footer from '../footer/Footer'
 
 
 
@@ -94,7 +95,7 @@ const CitiesDetail = () => {
       <Button><img src={konserIcon}/>KONSER</Button>
       <Button><img src={tiyatroIcon}/>TİYATRO</Button>
       <Button><img src={festivalIcon}/>FESTİVAL</Button>
-      <Button><img src={standupIcon}/><p>STAND <br/>UP</p></Button>
+      <Button><img src={standupIcon}/><p>STAND UP</p></Button>
       <Button><img src={cocukaktviteleriIcon}/>ÇOCUK <br/> AKTİVİTELERİ</Button>
       <Button><img src={blogIcon}/>BLOG</Button>
       </div>
@@ -139,6 +140,7 @@ const CitiesDetail = () => {
           }
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };
