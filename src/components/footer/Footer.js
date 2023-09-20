@@ -1,12 +1,11 @@
 import React from "react";
 import "../../components/footer/Footer.scss";
 import Logo from "../../images/logo-beyaz.svg";
-import GooglePlay from "../../images/GooglePlay.png"
-import AppleStore from "../../images/AppleStore.png"
+import GooglePlay from "../../images/GooglePlay.png";
+import AppleStore from "../../images/AppleStore.png";
 import { useParams } from "react-router-dom";
-import FooterMobile from "../../images/FooterMobile.png"
-import FooterCard from "../../images/FooterCard.png"
-
+import FooterMobile from "../../images/FooterMobile.png";
+import FooterCard from "../../images/FooterCard.png";
 
 const Footer = () => {
   const { name } = useParams();
@@ -94,55 +93,83 @@ const Footer = () => {
           </svg>
         </div>
       </div>
-      <hr className="footerBottomLine"></hr>
+      <hr className="footerTopLine"></hr>
       <div className="footerLinks">
         <div className="institutional">
           <h3>KURUMSAL</h3>
-         <ul>
-          <li>HAKKIMIZDA</li>
-          <li>GİZLİLİK</li>
-          <li>KULLANIM SÖZLEŞMESİ</li>
-          <li>KULLANIM KOŞULLARI</li>
-          <li>KCKK</li>
-          <li>BUBİLET PANEL</li>
-          <li>İLETİŞİM</li>
-          <li>ÇEREZ POLİTİKASI</li>
-         </ul>
+          <ul>
+            <li>HAKKIMIZDA</li>
+            <li>GİZLİLİK</li>
+            <li>KULLANIM SÖZLEŞMESİ</li>
+            <li>KULLANIM KOŞULLARI</li>
+            <li>KCKK</li>
+            <li>BUBİLET PANEL</li>
+            <li>İLETİŞİM</li>
+            <li>ÇEREZ POLİTİKASI</li>
+          </ul>
         </div>
         <div className="categories">
-        <h3>KATEGORİ</h3>
-         <ul>
-         <li>KONSET</li>
-          <li>TİYATRO</li>
-          <li>FESTİVAL</li>
-          <li>STAND UP</li>
-          <li>ÇOCUK AKTİVİTELERİ</li>
-          <li>BLOG</li>
-         </ul>
+          <h3>KATEGORİ</h3>
+          <ul>
+            <li>KONSET</li>
+            <li>TİYATRO</li>
+            <li>FESTİVAL</li>
+            <li>STAND UP</li>
+            <li>ÇOCUK AKTİVİTELERİ</li>
+            <li>BLOG</li>
+          </ul>
         </div>
         <div className="mobileApplication">
-       <p>Bubilet uygulamasını indirerek daha hızlı sonuç alabilirsiniz.
-       </p>
-       <div className="application">
-       <a _ngcontent-serverapp-c44="" href="https://play.google.com/store/apps/details?id=com.bukupon.android" title="Google Market" rel="nofollow" target="_blank"><img _ngcontent-serverapp-c44="" src={GooglePlay} alt="Google Play"/></a>
-       <a _ngcontent-serverapp-c44="" href="https://apps.apple.com/tr/app/bukupon/id1463201795?platform=iphone" title="App Store" rel="nofollow" target="_blank"><img _ngcontent-serverapp-c44="" src={AppleStore} alt="App Store"/></a>
-       </div>
+          <p>Bubilet uygulamasını indirerek daha hızlı sonuç alabilirsiniz.</p>
+          <div className="application">
+            <a
+              _ngcontent-serverapp-c44=""
+              href="https://play.google.com/store/apps/details?id=com.bukupon.android"
+              title="Google Market"
+              rel="nofollow"
+              target="_blank"
+            >
+              <img
+                _ngcontent-serverapp-c44=""
+                src={GooglePlay}
+                alt="Google Play"
+              />
+            </a>
+            <a
+              _ngcontent-serverapp-c44=""
+              href="https://apps.apple.com/tr/app/bukupon/id1463201795?platform=iphone"
+              title="App Store"
+              rel="nofollow"
+              target="_blank"
+            >
+              <img
+                _ngcontent-serverapp-c44=""
+                src={AppleStore}
+                alt="App Store"
+              />
+            </a>
+          </div>
+        </div>
       </div>
-      </div>
+      <hr className="footerBottomLine"></hr>
       <div className="copyright">
         <div className="card">
-        <img src={FooterCard} />
-        <p>BuBilet © Tüm Hakları Saklıdır</p>
+          <img src={FooterCard} />
+          <p>BuBilet © Tüm Hakları Saklıdır</p>
         </div>
         <div className="registrationNumber">
           <p>Tescil No</p>
           <span>195667</span>
         </div>
         <div className="mersisiNumber">
-        <p>Mersis No</p>
-         <span>03810468072000</span>
+          <p>Mersis No</p>
+          <span>03810468072000</span>
         </div>
-        <button><span>Şehir Değiştir</span><br/>{name}</button>
+        <button>
+          <span>Şehir Değiştir</span>
+          <br />
+          {name}
+        </button>
         <img src={FooterMobile} />
       </div>
     </div>
