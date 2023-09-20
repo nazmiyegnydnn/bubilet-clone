@@ -1,149 +1,52 @@
 .signUp{
     .signUpHeader{
-        background-color: #3DCD87;
-        height: 250px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         position: relative;
-        .bubiletLogo{
-            margin-left: 116px;
-            h3{
-                color: white;
-                margin-top: 50px;
-            }
-            p{
-                color: white;
-                opacity: 0.50;
-                font-weight: bold;
-                margin-top: 10px;
-            }
+        // .bubiletLogo{
+        //     margin-left: 116px;
+        //     h3{
+        //         color: white;
+        //         margin-top: 50px;
+        //     }
+        //     p{
+        //         color: white;
+        //         opacity: 0.50;
+        //         font-weight: bold;
+        //         margin-top: 10px;
+        //     }
 
-        }
-        .bubiletSignUp{
-            margin-right: 70px;
-            .login{
-                margin-right: 70px;
-                background-color: white;
-                width: 280px;
-                border-radius: 100px;  
-                background-color: #71E1a6;   
-                label{
-                    height: 45px;
-                    border: none;
-                    margin: 10px 0 0 25px;
-                    background-color: #71E1a6;
-                    color: white;
-                    font-weight: bold;
-                }
-                span{
-                    svg{
-                        width: 20px;
-                        height: 20px;
-                    }
-                }
+        // }
+        // .bubiletSignUp{
+        //     margin-right: 70px;
+        //     .login{
+        //         margin-right: 70px;
+        //         background-color: white;
+        //         width: 280px;
+        //         border-radius: 100px;  
+        //         background-color: #71E1a6;   
+        //         label{
+        //             height: 45px;
+        //             border: none;
+        //             margin: 10px 0 0 25px;
+        //             background-color: #71E1a6;
+        //             color: white;
+        //             font-weight: bold;
+        //         }
+        //         span{
+        //             svg{
+        //                 width: 20px;
+        //                 height: 20px;
+        //             }
+        //         }
               
-            }
-        }
+        //     }
+        // }
     }
      .signUpMain{
         background-color: #F1F1F1;
         padding: 15px 0 50px 0px; 
         display: flex;
         align-items: center;
-        .signUpText{
-            padding: 50px; 
-            margin-left: 100px;
-            width: 550px;
-            height: 500px;
-            background-color: #FFFFFF;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.10);
-           .signUpTextDetail{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-bottom: 30px;
-            svg{
-                width: 70px;
-                height: 70px;
-                margin-right: 50px;
-            }
-            .serviceText{
-                h3{
-                color: #2ED87B;
-                }
-                p{
-                color: #626256;
-                }
-            }
-           }
-           hr{
-            border: none; /* Var olan çizgiyi kaldırır */
-            border-top: 2px solid #808888; /* Yatay çizginin rengi ve genişliği burada ayarlanır */
-            width: 400px; /* Çizginin genişliği */
-            margin: 0 0 20px 0px;
-            opacity: 0.10;
-        }
-        .signUpBottomDetail{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            p{
-                width: 250px;
-                color: gray;
-          
-            }
-            button{
-                width: 120px;
-                height: 50px;
-                background-color: #2ED87B;
-                color: white;
-                border: none;
-                border-radius: 50px;
-                font-size: 18px;
-                font-weight: bold;
-            }
-        }
-        }
-         .signUpForm{
-            position: absolute;
-            top:180px;
-            left: 700px;
-            background-color: white;
-            border-radius: 20px;
-            width: 500px;
-            height: 500px;
-            margin-right: 80px;
-            padding: 30px;
-            hr{
-                border: none; /* Var olan çizgiyi kaldırır */
-                border-top: 2px solid #808888; /* Yatay çizginin rengi ve genişliği burada ayarlanır */
-                width: 500px; /* Çizginin genişliği */
-                margin: 0 0 20px -30px;
-                opacity: 0.10;
-            }
-            input{
-                border: 1px solid gray;
-                padding-bottom: 15px;
-                width: 200px;
-                .ant-checkbox-inner{
-                    background-color: #2ED87B;
-                    border: #2ED87B;
-                }
-            }
-            a{
-                color:#2ED87B
-            }
-            button{
-                background-color: #F1F1F1;
-                color: gray;
-                margin: 20px 0 0 350px;
-                border-radius: 40px;
-                width: 100px;
-                height: 50px;
-                font-weight: bold;
-            }
-         }
+      
+       
      }
 }

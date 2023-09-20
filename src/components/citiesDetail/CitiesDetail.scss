@@ -1,37 +1,4 @@
 .citiesDetail{
-    .detailHeader{
-        img{
-            margin-left: 70px;
-        }
-        .login{
-            margin-right: 70px;
-            background-color: white;
-            width: 280px;
-            border-radius: 100px;  
-            background-color: #71E1a6;   
-            label{
-                height: 45px;
-                border: none;
-                margin: 10px 0 0 25px;
-                background-color: #71E1a6;
-                color: white;
-                font-weight: bold;
-            }
-            span{
-                svg{
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-          
-        }
-        background-color: #2ED87B;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 150px;
-        position: relative;
-    }
     .detailSearch{
         border: 1px solid gray;
         background-color: white;
