@@ -156,34 +156,43 @@ const initialState = { //dizimiz depomuz burada
     ],
     events:[
         {
+            name:"Konser",
             img:Semicenk,
             title:"Semicenk Konseri",
             location:"Armada",
             date:"23 Eylül",
-            price:"430 TL"
+            price:"430 TL",
+            city:'İstanbul'
         },
         {
+            name:"Konser",
             img:Gulsen,
             title:"Gülşen Konseri",
             location:"Congresiıum",
             date:"15 Eylül",
-            price:"299 TL"
+            price:"299 TL",
+            city:'İstanbul'
         },
         {
+            name:"Çocuk Aktiviteleri",
             img:YildizTilbe,
             title:"Yıldız Tilbe Konseri",
             location:"Congresiıum",
             date:"6 Ekim",
-            price:"299 TL"
+            price:"299 TL",
+            city:'İstanbul'
         },
         {
+            name:"Blog",
             img:MelikeSahin,
             title:"Melike Şahin Konseri",
             location:"Armada",
             date:"17 Eylül",
-            price:"400 TL"
+            price:"400 TL",
+            city:'İstanbul'
         },
         {
+            name:"Konser",
             img:Gazapizm,
             title:"Gazapizm Konseri",
             location:"Oran Açıkhava",
@@ -191,6 +200,7 @@ const initialState = { //dizimiz depomuz burada
             price:"350 TL"
         },
         {
+            name:"Tiyatro",
             img:KenanDogulu,
             title:"Kenan Doğulu Konseri",
             location:"Atılım Üniversitesi",
@@ -198,46 +208,58 @@ const initialState = { //dizimiz depomuz burada
             price:"728 TL"
         },
         {
+            name:"Tiyatro",
             img:CemAdrian,
             title:"Cem Adrian Konseri",
             location:"MEB Şura Salonu",
             date:"17 Eylül",
-            price:"388 TL"
+            price:"388 TL",
+            city:'İzmir'
         },
         {
+            name:"Tiyatro",
             img:ErolEvgin,
             title:"Erol Evgin Konseri",
             location:"Atılım Üniversitesi",
             date:"8 Eylül",
-            price:"339 TL"
+            price:"339 TL",
+            city:'İzmir'
         },   
          {
+            name:"Festival",
             img:Athena,
             title:"Athena Konseri",
             location:"Armada",
             date:"3 Eylül",
-            price:"250 TL"
+            price:"250 TL",
+            city:'İzmir'
         },
         {
+            name:"Festival",
             img:Edis,
             title:"Edis Konseri",
             location:"Congresiıum",
             date:"21 Ekim",
-            price:"299 TL"
+            price:"299 TL",
+            city:'Ankara'
         },
         {
+            name:"Blog",
             img:Edis,
             title:"Edis Konseri",
             location:"Congresiıum",
             date:"21 Ekim",
-            price:"299 TL"
+            price:"299 TL",
+            city:'Ankara'
         },
         {
+            name:"Stand Up",
             img:Edis,
             title:"Edis Konseri",
             location:"Congresiıum",
             date:"21 Ekim",
-            price:"299 TL"
+            price:"299 TL",
+            city:'Ankara'
         }
     ]
 }
@@ -246,16 +268,32 @@ const initialState = { //dizimiz depomuz burada
   export const appSlice =  createSlice({ 
     name: 'app',  
     initialState,
-    reducers: {
-            
-        filterCities : (state , action)  => {
-        const filterData = state.cities?.filter((el) =>el.name?.toLocaleLowerCase()?.includes(action.payload.toLocaleLowerCase()));
-        state.cities = filterData
-        }
-        
-    }
+    reducers:{
+        filterCities: (state, action) => {
+          const filterData = state.cities?.filter((el) =>
+            el.name?.toLowerCase()?.includes(action.payload.toLowerCase())
+          );
+          state.cities = filterData;
+        },
+        filterEventsByType: (state, action) => {
+          const eventType = action.payload;
+          
+          // Tüm etkinlikleri orijinal haline geri yükleyin
+          state.events = initialState.events;
+    
+          // Etkinlikleri belirli bir türe göre yeniden filtrele
+          const filterEvents = state.events?.filter((el) => el.name === eventType);
+          state.events = filterEvents;
+        },
+         filterEventsByCity: (state, action) => {
+            const cityName = action.payload;
+            state.events = initialState.events;
+            const filteredEvents = state.events.filter((event) => event.city === cityName);
+            state.events = filteredEvents;
+          },
+      },
   })
 
-  export const {filterCities} = appSlice.actions  
+  export const {filterCities ,filterEventsByType ,filterEventsByCity} = appSlice.actions  
 
   export default appSlice.reducer  //appslice kendi dosyomızın ismine göre değişitir.

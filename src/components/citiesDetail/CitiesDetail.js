@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CitiesDetail.scss";
 import sliderOne from "../../images/sliderOne.webp";
 import sliderTwo from "../../images/sliderTwo.jpg";
@@ -13,22 +13,28 @@ import blogIcon from '../../images/blogIcon.png';
 import { SearchOutlined } from "@ant-design/icons";
 import { Input, Tooltip, Button, Carousel ,Dropdown } from "antd";
 import {useParams } from "react-router-dom";
-import {useSelector } from 'react-redux'
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
+import {useSelector ,useDispatch} from 'react-redux'  
+import {filterEventsByType } from '../../appSlice';
 
 
 
 const CitiesDetail = () => {
+  const dispatch = useDispatch()
   const onSearch = (value) => console.log(value);
   const { name } = useParams(); // Parametre adını değiştirin, bu URL parametresiyle eşleşmelidir
   const {events} = useSelector(state => state.app) 
+  // const { cityName } = useParams();
 
+
+  // useEffect(() => {
+  //   // Sayfa yüklendiğinde, seçilen şehire göre etkinlikleri filtrele
+  //   dispatch(filterEventsByCity(cityName));
+  // }, [dispatch, cityName]);
 
   
-  const onMenuClick = (e) => {
-    console.log('click', e);
-  };
+
   const items = [
     {
       key: '1',
@@ -55,8 +61,30 @@ const CitiesDetail = () => {
       ),
     },
   ];
-
-
+  const handleFilterConcert = (name) => {
+    dispatch(filterEventsByType('Konser'));
+  };
+  const handleFilterTheater = (name) => {
+    dispatch(filterEventsByType('Tiyatro')); // 'Tiyatro' etkinliklerini filtrelemek için
+  };
+  const handleFilterFestival = (name) => {
+    dispatch(filterEventsByType('Festival')); // 'Festival' etkinliklerini filtrelemek için
+  };
+  const handleFilterStandUp = (name) => {
+    dispatch(filterEventsByType('Stand Up')); // 'Stand Up' etkinliklerini filtrelemek için
+  };
+  const handleFilterKidsActivities = (name) => {
+    dispatch(filterEventsByType('Çocuk Aktiviteleri')); // 'Çocuk Aktiviteleri' etkinliklerini filtrelemek için
+  };
+  const handleFilterBlog = (name) => {
+    dispatch(filterEventsByType('Blog')); // 'Blog' etkinliklerini filtrelemek için
+  };
+  
+  
+  
+  
+  
+  
 
   return (
     <div className="citiesDetail">
@@ -87,12 +115,12 @@ const CitiesDetail = () => {
         </Carousel>
       </div>
       <div className="category">
-      <Button><img src={konserIcon}/>KONSER</Button>
-      <Button><img src={tiyatroIcon}/>TİYATRO</Button>
-      <Button><img src={festivalIcon}/>FESTİVAL</Button>
-      <Button><img src={standupIcon}/><p>STAND UP</p></Button>
-      <Button><img src={cocukaktviteleriIcon}/>ÇOCUK <br/> AKTİVİTELERİ</Button>
-      <Button><img src={blogIcon}/>BLOG</Button>
+      <Button onClick={() => handleFilterConcert(name)}><img src={konserIcon}/>KONSER</Button>
+      <Button onClick={() => handleFilterTheater(name)}><img src={tiyatroIcon}/>TİYATRO</Button>
+      <Button onClick={() => handleFilterFestival(name)}><img src={festivalIcon}/>FESTİVAL</Button>
+      <Button onClick={() => handleFilterStandUp(name)}><img src={standupIcon}/><p>STAND UP</p></Button>
+      <Button onClick={() => handleFilterKidsActivities(name)}><img src={cocukaktviteleriIcon}/>ÇOCUK <br/> AKTİVİTELERİ</Button>
+      <Button onClick={() => handleFilterBlog(name)}><img src={blogIcon}/>BLOG</Button>
       </div>
       <div className="events">
         <div className="eventsTitle">

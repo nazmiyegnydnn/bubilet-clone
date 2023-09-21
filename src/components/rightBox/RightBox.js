@@ -1,15 +1,19 @@
 import React from 'react'
 import './RightBox.scss'
-import {useSelector } from 'react-redux'  
 import { useNavigate } from "react-router-dom";
+import {useSelector ,useDispatch} from 'react-redux'  
+import { filterEventsByCity} from '../../appSlice';
+
 
 const RightBox = () => {
+  const dispatch = useDispatch()
 const {cities} = useSelector(state => state.app) 
 const navigate = useNavigate();
 
 
 const handlePage = (el) => {
   navigate(`/${el.name}`);
+  dispatch(filterEventsByCity())
 };
 
   return (
