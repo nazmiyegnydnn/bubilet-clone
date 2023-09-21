@@ -197,7 +197,8 @@ const initialState = { //dizimiz depomuz burada
             title:"Gazapizm Konseri",
             location:"Oran Açıkhava",
             date:"30 Eylül",
-            price:"350 TL"
+            price:"350 TL",
+            city:'Antalya'
         },
         {
             name:"Tiyatro",
@@ -205,7 +206,8 @@ const initialState = { //dizimiz depomuz burada
             title:"Kenan Doğulu Konseri",
             location:"Atılım Üniversitesi",
             date:"1 Eylül",
-            price:"728 TL"
+            price:"728 TL",
+            city:'Adana'
         },
         {
             name:"Tiyatro",
@@ -291,9 +293,14 @@ const initialState = { //dizimiz depomuz burada
             const filteredEvents = state.events.filter((event) => event.city === cityName);
             state.events = filteredEvents;
           },
+        filterEventsByName:(state, action) =>{
+            const filteredData = state.events?.filter((el) =>
+            el.name?.toLowerCase()?.includes(action.payload.toLowerCase()) );
+            state.events = filteredData
+        }
       },
   })
 
-  export const {filterCities ,filterEventsByType ,filterEventsByCity} = appSlice.actions  
+  export const {filterCities ,filterEventsByType ,filterEventsByCity , filterEventsByName} = appSlice.actions  
 
   export default appSlice.reducer  //appslice kendi dosyomızın ismine göre değişitir.

@@ -13,7 +13,7 @@ const navigate = useNavigate();
 
 const handlePage = (el) => {
   navigate(`/${el.name}`);
-  dispatch(filterEventsByCity())
+  dispatch(filterEventsByCity(el.name))
 };
 
   return (

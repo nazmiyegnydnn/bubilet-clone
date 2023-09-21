@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./CitiesDetail.scss";
 import sliderOne from "../../images/sliderOne.webp";
 import sliderTwo from "../../images/sliderTwo.jpg";
@@ -12,26 +12,21 @@ import cocukaktviteleriIcon from '../../images/cocukaktiviteleriIcon.png';
 import blogIcon from '../../images/blogIcon.png';
 import { SearchOutlined } from "@ant-design/icons";
 import { Input, Tooltip, Button, Carousel ,Dropdown } from "antd";
-import {useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import Footer from '../footer/Footer'
 import Header from '../header/Header'
 import {useSelector ,useDispatch} from 'react-redux'  
-import {filterEventsByType } from '../../appSlice';
+import {filterEventsByType ,filterEventsByName } from '../../appSlice';
 
 
 
 const CitiesDetail = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch()
   const onSearch = (value) => console.log(value);
-  const { name } = useParams(); // Parametre adını değiştirin, bu URL parametresiyle eşleşmelidir
-  const {events} = useSelector(state => state.app) 
-  // const { cityName } = useParams();
+  const { name } = useParams(); 
+  const events = useSelector(state => state.app.events);
 
-
-  // useEffect(() => {
-  //   // Sayfa yüklendiğinde, seçilen şehire göre etkinlikleri filtrele
-  //   dispatch(filterEventsByCity(cityName));
-  // }, [dispatch, cityName]);
 
   
 
@@ -80,23 +75,29 @@ const CitiesDetail = () => {
     dispatch(filterEventsByType('Blog')); // 'Blog' etkinliklerini filtrelemek için
   };
   
+  const handleHomeClik = () => {
+    navigate(`/`)
+  }
   
-  
-  
-  
+
+  const handleEventsClick = (title) => {
+        dispatch(filterEventsByName(title))
+    };
   
 
   return (
     <div className="citiesDetail">
       <Header/>
       <div className="detailSearch">
-        <Input placeholder="Etkinlik, sanatçı veya mekan arayın" onSearch={onSearch} />
+        <Input placeholder="Etkinlik, sanatçı veya mekan arayın" 
+        onSearch={onSearch}
+        onChange={(e) => handleEventsClick(e.target.value)} />
         <Tooltip title="search">
           <Button shape="circle" icon={<SearchOutlined />} />
         </Tooltip>
       </div>
       <div className="citiesButton">
-      <Button>{name}</Button>
+      <Button onClick={handleHomeClik}>{name}</Button>
       </div>
       <div className="headerLine">
         <Carousel autoplay>
