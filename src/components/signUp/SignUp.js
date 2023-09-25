@@ -1,20 +1,15 @@
 import React from "react";
-import './SignUp.scss'
-import Footer  from '../footer/Footer'
-import Header from '../header/Header'
+import "./SignUp.scss";
+import Footer from "../footer/Footer";
+import Header from "../header/Header";
 import SignUpText from "../signUpText/SignUpText";
 import SignUpForm from "../signUpForm/SignUpForm";
 
-
-
 const SignUp = () => {
-
-
-    
   return (
-    <div className='signUp'>
-    <div className='signUpHeader'>
-        <Header/>
+    <div className="signUp">
+      <div className="signUpHeader">
+        <Header />
         {/* <div className='bubiletLogo'>
             <img src={Logo}/>
             <h3>Bubilet Üye Ol</h3>
@@ -30,14 +25,14 @@ const SignUp = () => {
         </Radio.Group>
         </div>
         </div> */}
+      </div>
+      <div className="signUpMain">
+        <SignUpText />
+        <SignUpForm />
+      </div>
+      <Footer />
     </div>
-    <div className="signUpMain">
-      <SignUpText/>
-      <SignUpForm/>
- </div>
-    <Footer/>
-    </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

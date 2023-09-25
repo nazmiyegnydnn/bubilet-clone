@@ -8,7 +8,9 @@ import LoginText from '../loginText/LoginText'
 const Login = () => {
   return (
     <div className='login'>
-    <Header/>
+    <Header
+    
+    />
     <LoginText/>
     <LoginForm/>
     <Footer/>

@@ -1,22 +1,16 @@
 import React, { useState } from "react";
-import './SignUpForm.scss'
-import {
-    Form,
-    Input,
-    Checkbox,
-    Button,
-    Select
-  } from 'antd';
-
+import "./SignUpForm.scss";
+import { Form, Input, Checkbox, Button, Select, message } from "antd";
 
 const SignUpForm = () => {
-  const [size, setSize] = useState("large"); // default is 'middle'
+  const [size, setSize] = useState("large");
   const { Option } = Select;
+
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select
         style={{
-          width: 70,
+          width: 100,
         }}
       >
         <Option value="90">+90</Option>
@@ -25,79 +19,114 @@ const SignUpForm = () => {
       </Select>
     </Form.Item>
   );
+
+  const onFinish = (values) => {
+    console.log("Received values:", values);
+    message.success("Kayıt işlemi başarıyla tamamlandı!");
+
+    form.resetFields(); // "form" değişkeni formun referansını tutuyor
+  };
+
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+    message.error("Lütfen tüm alanları doldurun!");
+  };
+
+  // Formun referansını oluşturuyoruz
+  const [form] = Form.useForm();
+
   return (
     <div className="signUpForm">
-    <Form.Item
-    name="email"
-    label="E-mail"
-    rules={[
-      {
-        type: 'email',
-        message: 'The input is not valid E-mail!',
-      },
-      {
-        required: true,
-        message: 'Please input your E-mail!',
-      },
-    ]}
-  >
-    <Input />
-  </Form.Item>
-  <hr className="formLine"></hr>
-  <Form.Item
-    name="password"
-    label="Password"
-    rules={[
-      {
-        required: true,
-        message: 'Please input your password!',
-      },
-    ]}
-    hasFeedback
-  >
-    <Input.Password />
-  </Form.Item>
-  <hr className="formLine"></hr>
-  <Form.Item
-  name={['user', 'name']}
-  label="Name"
-  rules={[
-    {
-      required: true,
-    },
-  ]}
->
-  <Input />
-</Form.Item>
-<hr className="formLine"></hr>
-<Form.Item
-    name="phone"
-    label="Phone Number"
-    rules={[
-      {
-        required: true,
-        message: 'Please input your phone number!',
-      },
-    ]}
-  >
-    <Input
-      addonBefore={prefixSelector}
-      style={{
-        width: '100%',
-      }}
-    />
-  </Form.Item>
-  <hr className="formLine"></hr>
-  <Checkbox>
-      I have read the <a href="">agreement</a>
-    </Checkbox>
-    <br></br>
-    <Button type="primary" htmlType="submit">
-      Kayıt Ol
-    </Button>
-        
-    </div>
-  )
-}
+      <Form
+        form={form}
+        name="signup"
+        size={size}
+        initialValues={{
+          prefix: "90",
+        }}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+      >
+        <Form.Item
+          name="email"
+          label="E-mail"
+          rules={[
+            {
+              type: "email",
+              message: "Geçerli bir E-posta adresi giriniz!",
+            },
+            {
+              required: true,
+              message: "Lütfen E-posta adresinizi giriniz!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <hr className="formLine" />
 
-export default SignUpForm
+        <Form.Item
+          name="password"
+          label="Şifre"
+          rules={[
+            {
+              required: true,
+              message: "Lütfen şifrenizi giriniz!",
+            },
+          ]}
+          hasFeedback
+        >
+          <Input.Password />
+        </Form.Item>
+        <hr className="formLine" />
+
+        <Form.Item
+          name={["user", "name"]}
+          label="Ad-Soyad"
+          rules={[
+            {
+              required: true,
+              message: "Lütfen adınızı ve soyadınızı giriniz!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <hr className="formLine" />
+
+        <Form.Item
+          name="phone"
+          label="Telefon Numarası"
+          rules={[
+            {
+              required: true,
+              message: "Lütfen telefon numaranızı giriniz!",
+            },
+          ]}
+        >
+          <Input
+            addonBefore={prefixSelector}
+            style={{
+              width: "100%",
+            }}
+          />
+        </Form.Item>
+        <hr className="formLine" />
+
+        <Form.Item name="agreement" valuePropName="checked">
+          <Checkbox>
+            <a href="/">Sözleşmeyi</a> okudum.
+          </Checkbox>
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            Kayıt Ol
+          </Button>
+        </Form.Item>
+      </Form>
+    </div>
+  );
+};
+
+export default SignUpForm;
