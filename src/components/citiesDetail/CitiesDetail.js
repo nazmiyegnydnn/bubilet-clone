@@ -86,6 +86,11 @@ const CitiesDetail = () => {
     dispatch(filterEventsByName(title));
   };
 
+
+  const handleEventsDetail = () => {
+    navigate('/eventsDetay')
+  }
+
   return (
     <div className="citiesDetail">
       <Header />
@@ -159,7 +164,7 @@ const CitiesDetail = () => {
             <button>Görünüm</button>
           </div>
         </div>
-        <div className="eventsCard">
+        <div className="eventsCard" onClick={handleEventsDetail}>
           {events.map((el) => (
             <div className="cardDetay">
               <div className="cardImg">

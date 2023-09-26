@@ -3,6 +3,7 @@ import Home from "../src/components/home/Home";
 import CitiesDetail from "./components/citiesDetail/CitiesDetail";
 import SignUp from "./components/signUp/SignUp";
 import Login from "./components/login/Login";
+import EventsDetay from "./components/eventsDetay/EventsDetay";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Route path="/:name" element={<CitiesDetail/>}></Route>
           <Route path="/signUp" element={<SignUp/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
+          <Route path="/eventsDetay" element={<EventsDetay/>}></Route>
       </Routes>
       </BrowserRouter>
     </div>
