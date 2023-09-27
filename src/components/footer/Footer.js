@@ -3,12 +3,21 @@ import "../../components/footer/Footer.scss";
 import Logo from "../../images/logo-beyaz.svg";
 import GooglePlay from "../../images/GooglePlay.png";
 import AppleStore from "../../images/AppleStore.png";
-import { useParams } from "react-router-dom";
+import { useParams , useNavigate } from "react-router-dom";
 import FooterMobile from "../../images/FooterMobile.png";
 import FooterCard from "../../images/FooterCard.png";
 
+
 const Footer = () => {
+  const navigate = useNavigate();
   const { name } = useParams();
+  
+  const cityClick = ()  =>{
+    navigate('/')
+  }
+
+
+
   return (
     <div className="footerMenu">
       <div className="footerTitle">
@@ -165,7 +174,7 @@ const Footer = () => {
           <p>Mersis No</p>
           <span>03810468072000</span>
         </div>
-        <button>
+        <button onClick={cityClick}>
           <span>Şehir Değiştir</span>
           <br />
           {name}

@@ -298,8 +298,74 @@ const EventsDetay = () => {
                 </button>
             </div>
           </div>
-          <div className="buyTicket"></div>
-          <div className="eventsLocation"></div>
+          <div className="buyTicket">
+            <div className="buy">
+              <div className="buyText">
+                <h3>Bilet Satın Al</h3>
+                <h3>Tarih Seçiniz</h3>
+              </div>
+              <div className="buyDate">
+                <div className="date">
+                  <p>Tarih</p>
+                  <p className="location">Yer</p>
+                  <span>Koltuk Seçmeli</span>
+                </div>
+                <div className="price">
+                <p>Fiyat</p>
+                <button><svg width="100%" height="100%" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+    <g clip-path="url('/ankara/etkinlik/gulsen-konseri#clip0_108_48')">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.383 4.99998L6.93 0.756981L6.07 0.242981L3.217 4.99998H0.703C0.516553 4.99998 0.337742 5.07405 0.205904 5.20589C0.0740659 5.33772 0 5.51653 0 5.70298L0 6.14198C0 9.08598 0.685 11.989 2.002 14.622C2.05893 14.7355 2.14632 14.831 2.25439 14.8978C2.36247 14.9645 2.48697 14.9999 2.614 15H12.386C12.646 15 12.882 14.854 12.998 14.621C14.3146 11.9881 15 9.08474 15 6.14098V5.70298C15 5.51653 14.9259 5.33772 14.7941 5.20589C14.6623 5.07405 14.4834 4.99998 14.297 4.99998H11.783L8.93 0.242981L8.07 0.756981L10.617 4.99998H4.383ZM5 9.99998H10V8.99998H5V9.99998Z" fill="currentColor"></path>
+    </g>
+    <defs>
+      <clipPath id="clip0_108_48">
+        <rect width="15" height="15" fill="white"></rect>
+      </clipPath>
+    </defs>
+  </svg>Satın Al</button>
+                </div>
+              </div>
+            </div>
+            <div className="artist">
+              <h3>Sanatçılar</h3>
+              <div className="artistDetail">
+                 <p>Sanatçı Resmi</p>
+                <div className="artistText">
+                  <p>Santçı İsmi</p>
+                  <p>Etkinlik Türü</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="eventsLocation">
+            <h3>Konum İsmi</h3>
+            <div className="location">
+              <p><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                          <g clip-path="url('/ankara/etkinlik/gulsen-konseri#clip0_108_147')">
+                            <path d="M0 3.09497V18.9051H5.3387C5.94437 15.5404 3.3202 12.2186 1.53692 10.404C1.89057 10.3178 2.30293 10.1733 2.75613 9.93341C3.43165 9.5758 4.07595 9.07767 4.68716 8.44305C5.10701 8.82766 5.6663 9.06251 6.28053 9.06251C6.885 9.06251 7.43618 8.83496 7.85369 8.46118C8.27121 8.83496 8.82239 9.06251 9.42686 9.06251C10.0313 9.06251 10.5825 8.83496 11 8.46118C11.4176 8.83496 11.9687 9.06251 12.5732 9.06251C13.1777 9.06251 13.7288 8.83496 14.1464 8.46118C14.5639 8.83496 15.1151 9.06251 15.7195 9.06251C16.3338 9.06251 16.8931 8.82766 17.3129 8.44305C17.9241 9.07767 18.5684 9.5758 19.2439 9.93341C19.6971 10.1734 20.1094 10.3178 20.4631 10.404C18.6799 12.2186 16.0557 15.5404 16.6614 18.9051H22.0001V3.09497H0Z" fill="currentColor"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_108_147">
+                              <rect width="22" height="22" fill="white"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>Etkinlik Yeri</p>
+              <button><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                          <path d="M11 10.0834C11.7594 10.0834 12.375 9.46777 12.375 8.70837C12.375 7.94898 11.7594 7.33337 11 7.33337C10.2406 7.33337 9.625 7.94898 9.625 8.70837C9.625 9.46777 10.2406 10.0834 11 10.0834Z" fill="currentColor"></path>
+                          <path d="M11 1.83337C9.06774 1.83328 7.2135 2.59582 5.84033 3.95527C4.46715 5.31471 3.68601 7.16119 3.66669 9.09337C3.66669 14.1167 10.1292 19.7084 10.4042 19.9467C10.5702 20.0887 10.7815 20.1668 11 20.1668C11.2185 20.1668 11.4298 20.0887 11.5959 19.9467C11.9167 19.7084 18.3334 14.1167 18.3334 9.09337C18.314 7.16119 17.5329 5.31471 16.1597 3.95527C14.7865 2.59582 12.9323 1.83328 11 1.83337ZM11 11.9167C10.3655 11.9167 9.74517 11.7285 9.21757 11.376C8.68996 11.0235 8.27874 10.5224 8.03591 9.93615C7.79308 9.3499 7.72954 8.70481 7.85333 8.08246C7.97713 7.4601 8.28269 6.88843 8.73139 6.43974C9.18008 5.99105 9.75175 5.68548 10.3741 5.56169C10.9965 5.43789 11.6415 5.50143 12.2278 5.74426C12.814 5.98709 13.3151 6.39831 13.6677 6.92592C14.0202 7.45353 14.2084 8.07382 14.2084 8.70837C14.2084 9.55928 13.8703 10.3753 13.2687 10.977C12.667 11.5787 11.8509 11.9167 11 11.9167Z" fill="currentColor"></path>
+                        </svg>Konum</button>
+              <button><svg width="100%" height="100%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                          <g clip-path="url('/ankara/etkinlik/gulsen-konseri#clip0_108_147')">
+                            <path d="M0 3.09497V18.9051H5.3387C5.94437 15.5404 3.3202 12.2186 1.53692 10.404C1.89057 10.3178 2.30293 10.1733 2.75613 9.93341C3.43165 9.5758 4.07595 9.07767 4.68716 8.44305C5.10701 8.82766 5.6663 9.06251 6.28053 9.06251C6.885 9.06251 7.43618 8.83496 7.85369 8.46118C8.27121 8.83496 8.82239 9.06251 9.42686 9.06251C10.0313 9.06251 10.5825 8.83496 11 8.46118C11.4176 8.83496 11.9687 9.06251 12.5732 9.06251C13.1777 9.06251 13.7288 8.83496 14.1464 8.46118C14.5639 8.83496 15.1151 9.06251 15.7195 9.06251C16.3338 9.06251 16.8931 8.82766 17.3129 8.44305C17.9241 9.07767 18.5684 9.5758 19.2439 9.93341C19.6971 10.1734 20.1094 10.3178 20.4631 10.404C18.6799 12.2186 16.0557 15.5404 16.6614 18.9051H22.0001V3.09497H0Z" fill="currentColor"></path>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_108_147">
+                              <rect width="22" height="22" fill="white"></rect>
+                            </clipPath>
+                          </defs>
+                        </svg>Mekanı İncele</button>
+            </div>
+            <p>Sahnedeki Diğer Etkinlikler<hr></hr></p>
+          </div>
         </div>
       </div>
       <Footer />
