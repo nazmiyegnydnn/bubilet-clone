@@ -264,12 +264,16 @@ const initialState = {
       city: "Ankara",
     },
   ],
+  isLoginName: ''
 };
 
 export const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
+    handleLoginClick: (state, action) => {
+      state.isLoginName = action.payload;
+    },
     filterCities: (state, action) => {
       const filterData = state.cities?.filter((el) =>
         el.name?.toLowerCase()?.includes(action.payload.toLowerCase())
@@ -328,6 +332,7 @@ export const {
   filterEventsByName,
   filterEventsByPrice,
   filterEventsByDate,
+  handleLoginClick
 } = appSlice.actions;
 
 export default appSlice.reducer; //appslice kendi dosyomızın ismine göre değişitir.

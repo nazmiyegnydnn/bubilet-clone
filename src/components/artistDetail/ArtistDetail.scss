@@ -1,0 +1,37 @@
+.artistDetail{
+    background-color: #F1F1F1;
+    .artistDetailMain{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 40px;
+        .artistDetailLeft{
+            width: 300px;
+            background-color: white;
+            padding: 100px;
+            border-radius: 25px;
+        }
+        .artistDetailRight{
+            background-color: white;
+            border-radius: 25px;
+            padding:20px;
+            margin-left: 30px;
+            width: 800px;
+            height: 300px;
+            .artistTitle{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .artistText{
+                width: 750px;
+                height: 100px;
+                background-color: #F1F1F1;
+                margin-top: 20px;
+                border-radius: 25px;
+                padding: 20px;
+            }
+        }
+    
+    }
+}

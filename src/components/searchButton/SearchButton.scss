@@ -1,0 +1,29 @@
+.searchButton{
+    border: 1px solid gray;
+    background-color: white;
+    border-radius: 50px;
+    width: 700px;
+    height: 70px;
+    position: absolute;
+    top: 115px;
+    left: 70px;
+    z-index: 1;
+    Input{
+       width:400px;
+       border: none;
+       font-size: 18px;
+       margin: 15px 0 0 120px;
+    }
+    Button{
+        border: none;
+        background-color: white;
+        margin-left: 120px;
+        transform: scaleX(-1);
+        svg{
+            width: 30px;
+            height: 30px;
+            color: gray;
+        }
+        
+    }
+}

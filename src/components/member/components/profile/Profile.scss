@@ -1,0 +1,33 @@
+.profile{
+    background-color: #F1F1F1;
+    height: 700px;
+    padding: 50px 120px ;
+    h3{
+        color:gray;
+    }
+    p{
+        color: #B6B6B6;
+    }
+    .profileForm{
+        background-color: white;
+        border-radius: 25px;
+        width: 900px;
+        height: 330px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin:50px 0;
+        .formLeft{
+            width: 400px;
+            height: 250px;
+            background-color: red;
+        }
+        .formRight{
+            width: 400px;
+            height: 250px;
+            background-color: green;
+        }
+    }
+  
+}

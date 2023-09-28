@@ -10,23 +10,23 @@ import festivalIcon from "../../images/festivalIcon.png";
 import standupIcon from "../../images/standupIcon.png";
 import cocukaktviteleriIcon from "../../images/cocukaktiviteleriIcon.png";
 import blogIcon from "../../images/blogIcon.png";
-import { SearchOutlined } from "@ant-design/icons";
-import { Input, Tooltip, Button, Carousel, Dropdown } from "antd";
+import { Button, Carousel, Dropdown } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import Footer from "../footer/Footer";
 import Header from "../header/Header";
 import { useSelector, useDispatch } from "react-redux";
+import SearchButton from '../searchButton/SearchButton'
+
 import {
   filterEventsByType,
-  filterEventsByName,
   filterEventsByPrice,
   filterEventsByDate,
 } from "../../appSlice";
+import CitiesButton from "../citiesButton/CitiesButton";
 
 const CitiesDetail = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const onSearch = (value) => console.log(value);
   const { name } = useParams();
   const events = useSelector((state) => state.app.events);
 
@@ -78,14 +78,6 @@ const CitiesDetail = () => {
     dispatch(filterEventsByType("Blog")); // 'Blog' etkinliklerini filtrelemek için
   };
 
-  const handleHomeClik = () => {
-    navigate(`/`);
-  };
-
-  const handleEventsClick = (title) => {
-    dispatch(filterEventsByName(title));
-  };
-
 
   const handleEventsDetail = () => {
     navigate('/eventsDetay')
@@ -94,19 +86,8 @@ const CitiesDetail = () => {
   return (
     <div className="citiesDetail">
       <Header />
-      <div className="detailSearch">
-        <Input
-          placeholder="Etkinlik, sanatçı veya mekan arayın"
-          onSearch={onSearch}
-          onChange={(e) => handleEventsClick(e.target.value)}
-        />
-        <Tooltip title="search">
-          <Button shape="circle" icon={<SearchOutlined />} />
-        </Tooltip>
-      </div>
-      <div className="citiesButton">
-        <Button onClick={handleHomeClik}>{name}</Button>
-      </div>
+     <SearchButton/>
+     <CitiesButton/>
       <div className="headerLine">
         <Carousel autoplay>
           <div>

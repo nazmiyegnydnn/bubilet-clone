@@ -6,11 +6,10 @@ import './Login.scss'
 import LoginText from '../loginText/LoginText'
 
 const Login = () => {
+  const textToPassLogin = "Bubilet Üye Girişi , Hoş geldiniz hesabınıza giriş yapabilirsiniz";
   return (
     <div className='login'>
-    <Header
-    
-    />
+    <Header textLogin={textToPassLogin}/>
     <LoginText/>
     <LoginForm/>
     <Footer/>
