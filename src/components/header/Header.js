@@ -41,7 +41,6 @@ const Header = (props) => { // props parametresi doğrudan alınır, `{}` içine
               preserveAspectRatio="xMidYMid meet"
               focusable="false"
             >
-              {/* SVG içeriği */}
             </svg>
             Üye Ol
           </Radio.Button>

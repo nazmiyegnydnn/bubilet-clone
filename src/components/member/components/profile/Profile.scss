@@ -1,6 +1,6 @@
 .profile{
     background-color: #F1F1F1;
-    height: 700px;
+
     padding: 50px 120px ;
     h3{
         color:gray;
@@ -11,23 +11,62 @@
     .profileForm{
         background-color: white;
         border-radius: 25px;
-        width: 900px;
+        width: 1100px;
         height: 330px;
         padding: 20px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         margin:50px 0;
+        P{
+            color: #4B4B4B;
+            padding-bottom: 5px;
+        }
         .formLeft{
             width: 400px;
             height: 250px;
-            background-color: red;
         }
         .formRight{
             width: 400px;
             height: 250px;
-            background-color: green;
+            button{
+                width: 100px;
+                height: 40px;
+                border-radius: 25px;
+                color: white;
+                border:none
+            }
+            .update{
+                margin-left: 150px;
+                background-color: #48DB8B;
+            }
+            .delete{
+                margin-left: 5px;
+                background-color: #D13838;
+            }
         }
     }
-  
+    .passwordUpdate{
+        background-color: white;
+        border-radius: 25px;
+        width: 1100px;
+        height: 150px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin:50px 0;
+        .newPassword{
+            button{
+                width: 100px;
+                height: 40px;
+                border-radius: 25px;
+                color: white;
+                border:none;
+                margin-left: 250px;
+                background-color: #F1F1F1;
+                color: #4B4B4B;
+            }
+        }
+    }
 }

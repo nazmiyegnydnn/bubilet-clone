@@ -176,7 +176,7 @@ const initialState = {
     {
       name: "Çocuk Aktiviteleri",
       img: YildizTilbe,
-      title: "Yıldız Tilbe Konseri",
+      title: "Çocuk Aktivitesi",
       location: "Congresiıum",
       date: "15.11.2023",
       price: "299 TL",
@@ -185,7 +185,7 @@ const initialState = {
     {
       name: "Blog",
       img: MelikeSahin,
-      title: "Melike Şahin Konseri",
+      title: "Blog",
       location: "Armada",
       date: "17.09.2023",
       price: "400 TL",
@@ -203,7 +203,7 @@ const initialState = {
     {
       name: "Tiyatro",
       img: KenanDogulu,
-      title: "Kenan Doğulu Konseri",
+      title: "Tiyatro",
       location: "Atılım Üniversitesi",
       date: "01.10.2023",
       price: "728 TL",
@@ -212,7 +212,7 @@ const initialState = {
     {
       name: "Tiyatro",
       img: CemAdrian,
-      title: "Cem Adrian Konseri",
+      title: "Tiyatro",
       location: "MEB Şura Salonu",
       date: "25.10.2023",
       price: "388 TL",
@@ -221,7 +221,7 @@ const initialState = {
     {
       name: "Tiyatro",
       img: ErolEvgin,
-      title: "Erol Evgin Konseri",
+      title: "Tiyatro",
       location: "Atılım Üniversitesi",
       date: "08.10.2023",
       price: "339 TL",
@@ -230,7 +230,7 @@ const initialState = {
     {
       name: "Festival",
       img: Athena,
-      title: "Athena Konseri",
+      title: "Festival",
       location: "Armada",
       date: "05.10.2023",
       price: "250 TL",
@@ -239,7 +239,7 @@ const initialState = {
     {
       name: "Festival",
       img: Edis,
-      title: "Edis Konseri",
+      title: "Festival",
       location: "Congresiıum",
       date: "19.10.2023",
       price: "299 TL",
@@ -248,7 +248,7 @@ const initialState = {
     {
       name: "Blog",
       img: Edis,
-      title: "Edis Konseri",
+      title: "Blog",
       location: "Congresiıum",
       date: "21.10.2023",
       price: "299 TL",
@@ -257,7 +257,7 @@ const initialState = {
     {
       name: "Stand Up",
       img: Edis,
-      title: "Edis Konseri",
+      title: "Stand Up",
       location: "Congresiıum",
       date: "30.10.2023",
       price: "299 TL",

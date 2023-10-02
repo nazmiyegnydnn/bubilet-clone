@@ -1,0 +1,23 @@
+.favorite{
+        margin: 100px 100px; 
+        text-align: center;
+        h3{
+            color: #3AD085;
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        p{
+            color: #4B4B4B;
+        }
+        button{
+            background-color: #3AD085;
+            width: 150px;
+            height: 40px;
+            border-radius: 25px;
+            color: white;
+            border:none;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+}
