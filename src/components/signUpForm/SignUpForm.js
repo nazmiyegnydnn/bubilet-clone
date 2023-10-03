@@ -11,6 +11,7 @@ const SignUpForm = (props) => {
   const { Option } = Select;
   const dispatch = useDispatch();
 
+
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select
@@ -27,12 +28,13 @@ const SignUpForm = (props) => {
 
   const onFinish = (values) => {
     message.success("Kayıt işlemi başarıyla tamamlandı!");
+  // Form verilerini local storage'a kaydet
+  localStorage.setItem("userData", JSON.stringify(values));
+  alert("Veriler başarıyla kaydedildi.");
 
     form.resetFields(); // "form" değişkeni formun referansını tutuyor
-
     // '/memberProfile' sayfasına yönlendirme yapın
     dispatch(handleLoginClick(values.user.name));
-
     navigate("/memberProfile");
   };
 
@@ -41,18 +43,20 @@ const SignUpForm = (props) => {
     message.error("Lütfen tüm alanları doldurun!");
   };
 
+ 
+
   // Formun referansını oluşturuyoruz
   const [form] = Form.useForm();
+
+  console.log(localStorage.getItem("userData"))
 
   return (
     <div className="signUpForm">
       <Form
-        form={form}
+        form={form} 
         name="signup"
         size={size}
-        initialValues={{
-          prefix: "90",
-        }}
+        initialValues={{email: "qweokpqw"}}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
       >
@@ -98,6 +102,7 @@ const SignUpForm = (props) => {
               message: "Lütfen adınızı ve soyadınızı giriniz!",
             },
           ]}
+
         >
           <Input />
         </Form.Item>
@@ -142,7 +147,7 @@ const SignUpForm = (props) => {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" htmlType="submit">
+          <Button  type="primary" htmlType="submit">
             Kayıt Ol
           </Button>
         </Form.Item>

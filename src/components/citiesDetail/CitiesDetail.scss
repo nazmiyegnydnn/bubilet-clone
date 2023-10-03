@@ -1,81 +1,4 @@
-.citiesDetail{
- 
-    .headerLine{
-        height: 300px;
-        color: #fff;
-        text-align: center;
-        background: #364d79;
-        img{
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-    }
-    .category{
-        display: flex;
-        justify-content:space-evenly;
-        align-items: center;
-        position: absolute;
-        top: 430px;
-        left: 120px;
-        Button{
-            width:170px;
-            height: 80px;
-            border-radius: 25px;
-            color: #2ED87B;
-            font-weight: bold;
-            font-size: 16px;
-            margin-right: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            img{
-                width: 40px;
-                height: 40px;
-                margin:  0 6px -13px 0;
-            }
-            &:hover{
-                color: #2ED87B;
-                border-radius: 5px solid #2ED87B;
-            }
-            
-        }
-       
-    }
-    .events{
-        z-index: -1;
-        background-color: #E2E2E2;
-        .eventsTitle{
-        padding:100px 0 30px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        h2{
-        margin-left: 130px;
-        font-weight: 500;
-        color: #4b4b4b;
-        font-size: 27px;
-        letter-spacing: 1px;
-        margin-left: 125px;
-        }
-        .eventsButton{
-        margin-right:120px;
-         button{
-            width: 120px;
-            height: 50px;
-            border-radius: 50px;
-            color: #2ED87B;
-            background-color: white;
-            border: none;
-            font-size: 16px;
-            letter-spacing: -.6px;
-         }
-            .trend{
-                margin-right: 10px;
-            }
-        }
-        }
-        
-    }
-    .eventsCard{
+@mixin cardGrid {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -149,7 +72,125 @@
                 font-size: 18px;
             }
         }
+    }
+}
+
+.citiesDetail{
+    .headerLine{
+        height: 300px;
+        color: #fff;
+        text-align: center;
+        background: #364d79;
+        img{
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
         }
-    
+    }
+    .category{
+        display: flex;
+        justify-content:space-evenly;
+        align-items: center;
+        position: absolute;
+        top: 430px;
+        left: 120px;
+        Button{
+            width:170px;
+            height: 80px;
+            border-radius: 25px;
+            color: #2ED87B;
+            font-weight: bold;
+            font-size: 16px;
+            margin-right: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            img{
+                width: 40px;
+                height: 40px;
+                margin:  0 6px 0 0;
+            }
+            &:hover{
+                color: #2ED87B;
+                border-radius: 5px solid #2ED87B;
+            }
+            
+        }
+       
+    }
+    .events{
+        z-index: -1;
+        background-color: #E2E2E2;
+        .eventsTitle{
+        padding:100px 0 30px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2{
+        margin-left: 130px;
+        font-weight: 500;
+        color: #4b4b4b;
+        font-size: 27px;
+        letter-spacing: 1px;
+        margin-left: 125px;
+        }
+        .eventsButton{
+        margin-right:120px;
+        display: flex;
+         button{
+            width: 120px;
+            height: 50px;
+            border-radius: 50px;
+            color: #2ED87B;
+            background-color: white;
+            border: none;
+            font-size: 16px;
+            letter-spacing: -.6px;
+         }
+            .trend{
+                margin-right: 10px;
+            }
+        }
+        .buttons{
+            display: flex;
+            background-color:white;
+            border-radius: 50px;
+            width: 120px;
+            button{
+                img{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        }
+        
+    }
+    .eventCardGrid{
+        @include cardGrid;
+    }
+    .eventCardList{
+        @include cardGrid;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        .cardDetay{
+            width: 150px;
+            height: 300px;
+            .cardImg{
+                width: 150px;
+                height: 130px;
+                margin-bottom: 11px;
+            }
+            button{ 
+                width: 80px;
+                height: 20px;
+                svg{
+                    width: 15px;
+                    height: 15px;
+                }
+                .price{
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }

@@ -166,8 +166,53 @@ const initialState = {
     },
     {
       name: "Konser",
+      img: Semicenk,
+      title: "Semicenk Konseri",
+      location: "Armada",
+      date: "23.10.2023",
+      price: "430 TL",
+      city: "İzmir",
+    },
+    {
+      name: "Tiyatro",
+      img: Semicenk,
+      title: "Tiyatro",
+      location: "Armada",
+      date: "23.10.2023",
+      price: "430 TL",
+      city: "İstanbul",
+    },
+    {
+      name: "StandUp",
+      img: Gulsen,
+      title: "StandUp",
+      location: "Congresiıum",
+      date: "15.10.2023",
+      price: "299 TL",
+      city: "İstanbul",
+    },
+    {
+      name: "StandUp",
+      img: Gulsen,
+      title: "StandUp",
+      location: "Congresiıum",
+      date: "15.10.2023",
+      price: "299 TL",
+      city: "İzmir",
+    },
+    {
+      name: "Konser",
       img: Gulsen,
       title: "Gülşen Konseri",
+      location: "Congresiıum",
+      date: "15.10.2023",
+      price: "299 TL",
+      city: "İstanbul",
+    },
+    {
+      name: "Festival",
+      img: Gulsen,
+      title: "Festival",
       location: "Congresiıum",
       date: "15.10.2023",
       price: "299 TL",
@@ -181,6 +226,33 @@ const initialState = {
       date: "15.11.2023",
       price: "299 TL",
       city: "İstanbul",
+    },
+    {
+      name: "Çocuk Aktiviteleri",
+      img: YildizTilbe,
+      title: "Çocuk Aktivitesi",
+      location: "Congresiıum",
+      date: "15.11.2023",
+      price: "299 TL",
+      city: "İzmir",
+    },
+    {
+      name: "Konser",
+      img: YildizTilbe,
+      title: "Konser",
+      location: "Congresiıum",
+      date: "15.11.2023",
+      price: "100 TL",
+      city: "İstanbul",
+    },
+    {
+      name: "Konser",
+      img: YildizTilbe,
+      title: "Konser",
+      location: "Congresiıum",
+      date: "15.11.2023",
+      price: "100 TL",
+      city: "İzmir",
     },
     {
       name: "Blog",
@@ -255,6 +327,15 @@ const initialState = {
       city: "Ankara",
     },
     {
+      name: "Blog",
+      img: Edis,
+      title: "Blog",
+      location: "Congresiıum",
+      date: "21.10.2023",
+      price: "299 TL",
+      city: "İzmir",
+    },
+    {
       name: "Stand Up",
       img: Edis,
       title: "Stand Up",
@@ -280,29 +361,18 @@ export const appSlice = createSlice({
       );
       state.cities = filterData;
     },
-    filterEventsByType: (state, action) => {
-      const eventType = action.payload;
-
-      // Tüm etkinlikleri orijinal haline geri yükleyin
-      state.events = initialState.events;
-
-      // Etkinlikleri belirli bir türe göre yeniden filtrele
-      const filterEvents = state.events?.filter((el) => el.name === eventType);
-      state.events = filterEvents;
-    },
-    filterEventsByCity: (state, action) => {
-      const cityName = action.payload;
-      state.events = initialState.events;
-      const filteredEvents = state.events.filter(
-        (event) => event.city === cityName
-      );
-      state.events = filteredEvents;
-    },
     filterEventsByName: (state, action) => {
       const filteredData = state.events?.filter((el) =>
         el.name?.toLowerCase()?.includes(action.payload.toLowerCase())
       );
       state.events = filteredData;
+    },
+    filterEventsByCity: (state, action) => {
+      const cityName = action.payload;
+      const filteredEvents = state.events.filter(
+        (event) => event.city === cityName
+      );
+      state.events = filteredEvents;
     },
     filterEventsByPrice: (state) => {
       state.events.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
@@ -327,7 +397,6 @@ export const appSlice = createSlice({
 
 export const {
   filterCities,
-  filterEventsByType,
   filterEventsByCity,
   filterEventsByName,
   filterEventsByPrice,
