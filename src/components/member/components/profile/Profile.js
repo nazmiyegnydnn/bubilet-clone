@@ -53,7 +53,7 @@ const Profile = ({ value = {}, onChange }) => {
             style={{
               width: 250,
             }}
-            name={["user", "name"]}
+            name="user"
             rules={[
               {
                 required: true,

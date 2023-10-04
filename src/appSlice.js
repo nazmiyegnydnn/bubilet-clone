@@ -345,15 +345,15 @@ const initialState = {
       city: "Ankara",
     },
   ],
-  isLoginName: ''
+  isLoggedin:false
 };
 
 export const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
-    handleLoginClick: (state, action) => {
-      state.isLoginName = action.payload;
+    handleLoggedin: (state, action) => {
+      state.isLoggedin = action.payload;
     },
     filterCities: (state, action) => {
       const filterData = state.cities?.filter((el) =>
@@ -393,6 +393,7 @@ export const appSlice = createSlice({
           });
     },
   },
+
 });
 
 export const {
@@ -401,7 +402,7 @@ export const {
   filterEventsByName,
   filterEventsByPrice,
   filterEventsByDate,
-  handleLoginClick
+  handleLoggedin
 } = appSlice.actions;
 
 export default appSlice.reducer; //appslice kendi dosyomızın ismine göre değişitir.

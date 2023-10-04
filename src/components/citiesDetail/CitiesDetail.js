@@ -67,7 +67,7 @@ const CitiesDetail = () => {
   const [layout, setLayout] = useState('');
 
 
-  console.log(events)
+  // console.log(events)
   const handleSortByPrice = () => {
     dispatch(filterEventsByPrice());
   };
@@ -100,7 +100,7 @@ const CitiesDetail = () => {
 
   const citiesDetailData = (categoryName) => {
     const filterCitiesEvents = events?.filter((el) => el.name === categoryName);
-    console.log(filterCitiesEvents)
+    // console.log(filterCitiesEvents)
     setCityData(filterCitiesEvents)
   }
 

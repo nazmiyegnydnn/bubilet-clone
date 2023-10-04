@@ -8,9 +8,9 @@ import "./Header.scss";
 const Header = (props) => { // props parametresi doğrudan alınır, `{}` içine gerek yok
   const [size, setSize] = useState("large");
   const navigate = useNavigate();
-  const { isLoginName } = useSelector((state) => state.app);
-
-  console.log(isLoginName)
+  const { isLoggedin } = useSelector((state) => state.app);
+  const userStorageData = JSON.parse(localStorage.getItem("userData"))
+  // console.log(isLoginName)
 
   const handleClick = () => {
     navigate(`/signUp`);
@@ -23,9 +23,9 @@ const Header = (props) => { // props parametresi doğrudan alınır, `{}` içine
       <img src={Logo} alt="Logo" /> 
       <p className="propsText">{props.text}</p> 
       <p className="propsText">{props.textLogin}</p>
-      {isLoginName !== "" ?
+      {isLoggedin ?
           <div className='profileHeader'>
-            <p>Hoşgeldiniz {isLoginName}</p>
+            <p>Hoşgeldiniz {userStorageData.user.name}</p>
           </div>
         :
         <div className="login">

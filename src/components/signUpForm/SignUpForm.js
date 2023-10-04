@@ -3,7 +3,6 @@ import "./SignUpForm.scss";
 import { useDispatch } from "react-redux";
 import { Form, Input, Checkbox, Button, Select, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import { handleLoginClick } from "../../appSlice";
 
 const SignUpForm = (props) => {
   const navigate = useNavigate();
@@ -31,10 +30,10 @@ const SignUpForm = (props) => {
   // Form verilerini local storage'a kaydet
   localStorage.setItem("userData", JSON.stringify(values));
   alert("Veriler başarıyla kaydedildi.");
+  console.log(values)
 
     form.resetFields(); // "form" değişkeni formun referansını tutuyor
     // '/memberProfile' sayfasına yönlendirme yapın
-    dispatch(handleLoginClick(values.user.name));
     navigate("/memberProfile");
   };
 

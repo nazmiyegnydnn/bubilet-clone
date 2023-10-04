@@ -1,38 +1,37 @@
 import React, { useState } from "react";
 import "./LoginForm.scss";
+import { useSelector,useDispatch } from "react-redux";
 import { Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
+import {handleLoggedin} from '../../appSlice'
+
+
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { isLoggedin } = useSelector((state) => state.app);
 
 
-  const [girisYapildi, setGirisYapildi] = useState(false);
-
-  const onFinish = (values) => {
-    console.log("Received values:", values);
-
-    // Form alanlarını kontrol et
-    if (!values.phone) {
-      message.error("Lütfen telefon numaranızı girin.");
-      return;
+  const onFinish = async (values) => {
+    const userStorageData = JSON.parse(localStorage.getItem("userData"))
+    if( userStorageData.email === values.email && userStorageData.password === values.password){
+      await dispatch(handleLoggedin(true));
+      await navigate('/citiesDetail')
+    }else{
+      dispatch(handleLoggedin(false));
     }
-
-    setGirisYapildi(true);
   };
 
   // Formun referansını oluşturun
   const [form] = Form.useForm();
 
-const loginClick = () =>{
-  navigate("/citiesDetail");
 
-} 
 
   return (
     <div className="loginForm">
       <h3>Giriş Yap</h3>
-      {girisYapildi ? null : <p>E-postanızı ve şifrenizi girin  devam edin</p>}
+      {isLoggedin === false ? '' : <p>E-postanızı ve şifrenizi girin  devam edin</p>}
       <Form form={form} name="login" onFinish={onFinish}>
       <Form.Item
           name="email"
@@ -63,11 +62,11 @@ const loginClick = () =>{
         >
           <Input.Password />
         </Form.Item>
-        {/* "girisYapildi" durumuna göre mesajı görüntüle */}
-        {girisYapildi ? (
+        {/* "isLoggedin" durumuna göre mesajı görüntüle */}
+        {isLoggedin ? (
           <div style={{ color: "green" }}>Giriş yapıldı!</div>
         ) : (
-          <button type="submit" className="signUp" onClick={loginClick}>
+          <button type="submit" className="signUp">
             Devam
           </button>
         )}
