@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./LoginForm.scss";
 import { useSelector,useDispatch } from "react-redux";
-import { Form, Input, message } from "antd";
+import { Form, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import {handleLoggedin} from '../../appSlice'
 
@@ -17,7 +17,7 @@ const LoginForm = () => {
     const userStorageData = JSON.parse(localStorage.getItem("userData"))
     if( userStorageData.email === values.email && userStorageData.password === values.password){
       await dispatch(handleLoggedin(true));
-      await navigate('/citiesDetail')
+      await navigate('/')
     }else{
       dispatch(handleLoggedin(false));
     }

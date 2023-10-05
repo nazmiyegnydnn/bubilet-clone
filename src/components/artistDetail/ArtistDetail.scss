@@ -1,5 +1,8 @@
 .artistDetail{
     background-color: #F1F1F1;
+    .topTitle{
+        margin: 65px 0 0 84px;
+    }
     .artistDetailMain{
         display: flex;
         justify-content: space-around;
@@ -10,6 +13,10 @@
             background-color: white;
             padding: 100px;
             border-radius: 25px;
+            img{
+                width: 100px;
+                height: 100px;
+            }
         }
         .artistDetailRight{
             background-color: white;

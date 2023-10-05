@@ -19,6 +19,7 @@ import Header from "../header/Header";
 import { useSelector, useDispatch  } from "react-redux";
 import SearchButton from '../searchButton/SearchButton'
 
+
 import {
   filterEventsByPrice,
   filterEventsByDate,
@@ -26,7 +27,7 @@ import {
 import CitiesButton from "../citiesButton/CitiesButton";
 
 
-const CitiesDetail = () => {
+const CitiesDetail = ({basketData, setBasketData}) => {
  const  category =[
   {
     id: 1,
@@ -62,9 +63,10 @@ const CitiesDetail = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { name } = useParams();
-  const {events} = useSelector((state) => state.app);
+  const {} = useSelector((state) => state.app);
   const [cityData, setCityData] = useState([])
   const [layout, setLayout] = useState('');
+  const {events} = useSelector((state) => state.app);
 
 
   // console.log(events)
@@ -104,12 +106,16 @@ const CitiesDetail = () => {
     setCityData(filterCitiesEvents)
   }
 
-  const handleEventsDetail = () => {
-    navigate('/eventsDetay')
-  }
- 
+  const handleEventsDetail = (item) => {
+    navigate(`/eventsDetay/${item.id}`);
+  };
+
+  const basketPlus = (item) => {
+    setBasketData((prevState) => [...prevState, item]);
+  };
+
   return (
-    <div className="citiesDetail">
+    <div className="citiesDetail" >
       <Header />
      <SearchButton/>
      <CitiesButton/>
@@ -138,6 +144,9 @@ const CitiesDetail = () => {
           </Button>
           ))
         }
+        <div _ngcontent-serverapp-c46="" className="top"><mat-icon _ngcontent-serverapp-c46="" role="img" svgicon="arrow-app" class="mat-icon notranslate mat-icon-no-color" aria-hidden="true" data-mat-icon-type="svg" data-mat-icon-name="arrow-app"><svg width="100%" height="100%" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+      <path d="M13 8.66667C13.2531 8.66617 13.4985 8.75433 13.6934 8.91583L20.1934 14.3325C20.4146 14.5164 20.5537 14.7806 20.5801 15.0671C20.6065 15.3535 20.5181 15.6388 20.3342 15.86C20.1503 16.0812 19.8861 16.2204 19.5996 16.2468C19.3131 16.2732 19.0279 16.1847 18.8067 16.0008L13 11.1475L7.19336 15.8275C7.08255 15.9175 6.95504 15.9847 6.81818 16.0252C6.68131 16.0658 6.53778 16.0789 6.39583 16.0638C6.25388 16.0487 6.11632 16.0057 5.99104 15.9373C5.86577 15.8688 5.75526 15.7763 5.66586 15.665C5.56665 15.5536 5.49151 15.4229 5.44515 15.2812C5.39879 15.1394 5.38221 14.9895 5.39645 14.8411C5.41069 14.6926 5.45544 14.5486 5.52789 14.4182C5.60035 14.2879 5.69896 14.1738 5.81753 14.0833L12.3175 8.85083C12.518 8.71486 12.7583 8.65002 13 8.66667Z" fill="currentColor"></path>
+    </svg></mat-icon></div>
       </div>
       <div className="events">
         <div className="eventsTitle">
@@ -157,11 +166,11 @@ const CitiesDetail = () => {
             </div>
           </div>
         </div>
-        <div className={layout === "eventCardGrid" ? "eventCardGrid" : "eventCardList"} onClick={handleEventsDetail}>
+        <div className={layout === "eventCardGrid" ? "eventCardGrid" : "eventCardList"} >
           {
             cityData.length > 0 ?
               cityData.map((el) => (
-              <div className="cardDetay">
+              <div className="cardDetay" onClick={() => handleEventsDetail(el)}>
                 <div className="cardImg">
                   <img src={el.img} />
                 </div>
@@ -207,7 +216,7 @@ const CitiesDetail = () => {
                   </svg>
                   {el.date}
                 </p>
-                <button>
+                <button onClick={() => basketPlus(el)}>
                   <p className="price"> {el.price}</p>
                   <svg
                     width="100%"
@@ -231,7 +240,7 @@ const CitiesDetail = () => {
               ))
               :
               events.map((el) => (
-                <div className="cardDetay">
+                <div className="cardDetay" onClick={() => handleEventsDetail(el)}>
                   <div className="cardImg">
                     <img src={el.img} />
                   </div>
@@ -277,7 +286,7 @@ const CitiesDetail = () => {
                     </svg>
                     {el.date}
                   </p>
-                  <button>
+                  <button onClick={() => basketPlus(el)}>
                     <p className="price"> {el.price}</p>
                     <svg
                       width="100%"

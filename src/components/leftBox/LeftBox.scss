@@ -6,6 +6,26 @@
             margin: 45px 0 20px 50px;
         }
     }
+    .leftBoxHeader{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 30px 20px;
+        height: 70px;
+        width: 400px;
+        background-color: #2ED87B;
+        border-radius: 25px;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        p{
+         font-weight: 600;
+         font-size: 30px;
+        }
+        img{
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+        }
+       }
     .leftBox-search{
         display: flex;
         justify-content: center;

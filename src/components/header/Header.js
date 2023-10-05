@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Logo from "../../images/logo-beyaz.svg";
+import UserIcon from "../../images/UserIcon.png" 
 import { Radio } from "antd";
 import { useNavigate } from "react-router-dom";
 import "./Header.scss";
@@ -18,14 +19,24 @@ const Header = (props) => { // props parametresi doğrudan alınır, `{}` içine
   const handleClickTwo = () => {
     navigate(`/login`);
   };
+
+  const handleClickHome = () =>{
+    navigate('/')
+  }
+  const handleClickMember = () =>{
+    navigate('/memberProfile')
+  }
+
+
   return (
     <div className="header">
-      <img src={Logo} alt="Logo" /> 
+      <img src={Logo} alt="Logo" className="logo" onClick={handleClickHome}/> 
       <p className="propsText">{props.text}</p> 
       <p className="propsText">{props.textLogin}</p>
       {isLoggedin ?
-          <div className='profileHeader'>
-            <p>Hoşgeldiniz {userStorageData.user.name}</p>
+          <div className='profileHeader' onClick={handleClickMember}>
+            <p>Hoşgeldin {userStorageData.user.name}</p>
+            <img src={UserIcon}/>
           </div>
         :
         <div className="login">

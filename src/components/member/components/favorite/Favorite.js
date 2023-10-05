@@ -13,7 +13,7 @@ const homePage = ()=>{
 
   return (
     <div className='favorite'>
-        <h3>Favorilerin Boşş (favoriye eklersen  gelecek)</h3>
+        <h3>Favorilerin Boşş</h3>
         <p>Henüz favorilerine hiç etkinlik eklemedin!</p> 
         <p>Etkinliklerden haberdar olmak için hemen favorilerine eklemeye başla..</p>
         <button onClick={homePage}>Hemen Başla</button>

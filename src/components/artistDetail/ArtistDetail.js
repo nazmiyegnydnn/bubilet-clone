@@ -6,16 +6,18 @@ import AddFavoritesButton from "../addFavoritesButton/AddFavoritesButton";
 import SearchButton from '../searchButton/SearchButton'
 import CitiesButton from "../citiesButton/CitiesButton";
 
+
 const ArtistDetail = () => {
-  
+
+ 
   return (
     <div className="artistDetail">
       <Header />
       <SearchButton/>
       <CitiesButton/>
-      <div>Home/Etkinlik/Sanatçı</div>
+      <div className="topTitle">Home/Etkinlik/Sanatçı</div>
       <div className="artistDetailMain">
-        <div className="artistDetailLeft">SANATÇI GÖRSEL</div>
+        <div className="artistDetailLeft"></div>
         <div className="artistDetailRight">
           <div className="artistTitle">
             <h3>Sanatçı Adı</h3>

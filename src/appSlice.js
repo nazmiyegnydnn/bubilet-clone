@@ -156,6 +156,7 @@ const initialState = {
   ],
   events: [
     {
+      id:1,
       name: "Konser",
       img: Semicenk,
       title: "Semicenk Konseri",
@@ -165,6 +166,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:2,
       name: "Konser",
       img: Semicenk,
       title: "Semicenk Konseri",
@@ -174,6 +176,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:3,
       name: "Tiyatro",
       img: Semicenk,
       title: "Tiyatro",
@@ -183,6 +186,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:4,
       name: "StandUp",
       img: Gulsen,
       title: "StandUp",
@@ -192,6 +196,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:5,
       name: "StandUp",
       img: Gulsen,
       title: "StandUp",
@@ -201,6 +206,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:6,
       name: "Konser",
       img: Gulsen,
       title: "Gülşen Konseri",
@@ -210,6 +216,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:7,
       name: "Festival",
       img: Gulsen,
       title: "Festival",
@@ -219,6 +226,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:8,
       name: "Çocuk Aktiviteleri",
       img: YildizTilbe,
       title: "Çocuk Aktivitesi",
@@ -228,6 +236,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:9,
       name: "Çocuk Aktiviteleri",
       img: YildizTilbe,
       title: "Çocuk Aktivitesi",
@@ -237,6 +246,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:10,
       name: "Konser",
       img: YildizTilbe,
       title: "Konser",
@@ -246,6 +256,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:11,
       name: "Konser",
       img: YildizTilbe,
       title: "Konser",
@@ -255,6 +266,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:12,
       name: "Blog",
       img: MelikeSahin,
       title: "Blog",
@@ -264,6 +276,7 @@ const initialState = {
       city: "İstanbul",
     },
     {
+      id:13,
       name: "Konser",
       img: Gazapizm,
       title: "Gazapizm Konseri",
@@ -273,6 +286,7 @@ const initialState = {
       city: "Antalya",
     },
     {
+      id:14,
       name: "Tiyatro",
       img: KenanDogulu,
       title: "Tiyatro",
@@ -282,6 +296,7 @@ const initialState = {
       city: "Adana",
     },
     {
+      id:15,
       name: "Tiyatro",
       img: CemAdrian,
       title: "Tiyatro",
@@ -291,6 +306,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:16,
       name: "Tiyatro",
       img: ErolEvgin,
       title: "Tiyatro",
@@ -300,6 +316,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:17,
       name: "Festival",
       img: Athena,
       title: "Festival",
@@ -309,6 +326,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:18,
       name: "Festival",
       img: Edis,
       title: "Festival",
@@ -318,6 +336,7 @@ const initialState = {
       city: "Ankara",
     },
     {
+      id:19,
       name: "Blog",
       img: Edis,
       title: "Blog",
@@ -326,7 +345,7 @@ const initialState = {
       price: "299 TL",
       city: "Ankara",
     },
-    {
+    { id:20,
       name: "Blog",
       img: Edis,
       title: "Blog",
@@ -336,6 +355,7 @@ const initialState = {
       city: "İzmir",
     },
     {
+      id:21,
       name: "Stand Up",
       img: Edis,
       title: "Stand Up",
@@ -345,7 +365,7 @@ const initialState = {
       city: "Ankara",
     },
   ],
-  isLoggedin:false
+  isLoggedin:false,
 };
 
 export const appSlice = createSlice({
@@ -392,8 +412,7 @@ export const appSlice = createSlice({
             return dateA - dateB;
           });
     },
-  },
-
+  }
 });
 
 export const {

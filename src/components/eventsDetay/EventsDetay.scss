@@ -1,14 +1,23 @@
 .eventsDetail{
     background-color: #F1F1F1;
+    .topTitle{
+        margin: 70px 100px 0 80px;
+    }
     .eventsDetailMain{
         padding: 50px 0 50px 0;
         display: flex;
         justify-content:center;
         align-items: center;
         .eventsDetailLeft{
-            width: 300px;
-            background-color: white;
             padding: 100px;
+            img{
+                width: 245px;
+                height: 350px;
+                border-radius: 25px;
+               position: fixed;
+                top: 270px;
+                left: 85px;
+            }
         }
         .eventsDetailRight{
             .eventsDetailText{
@@ -36,11 +45,17 @@
                         svg{
                             width: 25px;
                         }
+                        :hover{
+                            background-color:#2ED87B;
+                            border-radius: 500px;  
+                            width: 40px;
+                            height: 40px;
+                        }
                     }
                     .eventsName{
                         .eventType{
                             display: flex;
-                            justify-content: space-between;
+                            justify-content:center;
                             align-items: center;
                             svg{
                                 width: 20px;
@@ -153,9 +168,16 @@
                     width: 300px;
                     height: 180px;
                     .artistDetail{
+                        margin-top: 15px;
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
+                        background-color: white;
+                        img{
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 20px;
+                        }
                     }
                 }
             }

@@ -1,10 +1,19 @@
 import React from 'react'
 import './AddFavoritesButton.scss'
+import { useNavigate} from "react-router-dom";
 
 const AddFavoritesButton = () => {
+  const navigate = useNavigate();
+
+
+  const handleFavoritesClick = () => {
+   navigate('/memberProfile')
+  };
+
+
   return (
     <div className='addFavoritesButton'>
-            <button>
+            <button onClick={handleFavoritesClick}>
                 Favoriler Ekle
                 <svg
                   width="100%"

@@ -1,11 +1,12 @@
 import React from 'react'
 import './CitiesButton.scss'
-import { useNavigate ,useParams } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import { Button } from "antd";
+import { useSelector } from "react-redux";
 
 const CitiesButton = () => {
     const navigate = useNavigate();
-    const { name } = useParams();
+    const {events} = useSelector((state) => state.app);
 
     const handleHomeClik = () => {
         navigate(`/`);
@@ -15,7 +16,7 @@ const CitiesButton = () => {
 
   return (
     <div className="citiesButton">
-        <Button onClick={handleHomeClik}>{name}</Button>
+        <Button onClick={handleHomeClik}>{events[0]?.city}</Button>
       </div>
     
   )

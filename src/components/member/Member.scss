@@ -1,0 +1,59 @@
+.memberProfile{
+    background-color: #2ED87B;
+    .memberheader{
+        width:350px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-left: 80px;
+        color: white;
+        font-weight: 600;
+        font-size: 20px;
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50px;
+        }
+        .headerCloseButton{
+        button{
+            background-color: #329768;
+            color: white;
+            border-radius: 20px;
+            border: none;
+            width: 110px;
+            height: 30px;
+            font-size: 15px;
+            margin-top: 10px;
+            &:hover{
+                opacity: 0.80;
+            }
+        }
+        }
+    }
+    .tab{
+        
+/* Başlıkları sağa hizalama */
+.ant-tabs-nav {
+    margin: 0 0 0 700px;
+  }
+  .ant-tabs-nav .ant-tabs-tab {
+    margin-right: 50px; /* İstediğiniz boşluk miktarını ayarlayabilirsiniz */
+  }
+  .ant-tabs-tab {
+    background: none;
+    border: none; 
+    cursor: pointer;
+    font-weight: bold; 
+    font-size: 16px; 
+    color: white;
+    transition: color 0.3s; 
+  }
+  .ant-tabs-nav .ant-tabs-tab-active {
+  color: white !important;
+  
+  }
+  .ant-tabs-tab:hover {
+    color: #2ED87B;
+  }
+    }
+}

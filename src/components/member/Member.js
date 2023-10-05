@@ -4,35 +4,39 @@ import Footer from '../footer/Footer';
 import Header from '../header/Header';
 import Settings from './components/settings/Settings';
 import Favorite from './components/favorite/Favorite';
-import Profile from './components/profile/Profile'
-import Tickets from './components/tickets/Tickets';
+import Profile from './components/profile/Profile';
+import Tickets from   './components/tickets/Tickets';
 import { Tabs } from 'antd';
+import UserIcon from "../../images/UserIcon.png" 
 
 
-const Member = () => {
+const Member = ({basketData, setBasketData ,basketFavorites}) => {
+  const userStorageData = JSON.parse(localStorage.getItem("userData"))
+
  
   const onChange = (key) => {
     console.log(key);
   };  
+  
   const items = [
     {
       key: '1',
-      label: 'Tab 1',
+      label: 'Profili Düzenle',
       children: <Profile></Profile>,
     },
     {
       key: '2',
-      label: 'Tab 2',
-      children: <Tickets></Tickets>,
-    },
+      label: 'Biletlerim',
+      children: <Tickets  basketData={basketData} setBasketData={setBasketData}></Tickets>,
+  },
     {
       key: '3',
-      label: 'Tab 3',
-      children: <Favorite></Favorite>,
+      label: 'Favoriler',
+      children: <Favorite basketFavorites={basketFavorites}></Favorite>,
     },
     {
       key: '4',
-      label: 'Tab 4',
+      label: 'Ayarlar',
       children: <Settings></Settings>,
     }
   ];
@@ -40,8 +44,15 @@ const Member = () => {
   return (
     <div className='memberProfile'>
       <Header/>
+      <div className='memberheader'>
+      <img src={UserIcon}/>
+      <div className='headerCloseButton'>
+      <p>Hoşgeldin {userStorageData.user.name}</p>
+      <button>Çıkış Yap</button>
+      </div>
+        </div>
       <div className='tab'>
-      <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
+        <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
       </div>
       <Footer />
     </div>

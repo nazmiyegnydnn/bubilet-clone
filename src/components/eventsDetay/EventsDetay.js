@@ -6,25 +6,29 @@ import { useNavigate } from "react-router-dom";
 import AddFavoritesButton from "../addFavoritesButton/AddFavoritesButton";
 import SearchButton from '../searchButton/SearchButton'
 import CitiesButton from "../citiesButton/CitiesButton";
+import { useSelector } from "react-redux";
+
 
 const EventsDetay = () => {
   const navigate = useNavigate();
   const ArtistDetailClick = () => {
     navigate("/artistDetail");
   };
+    const {events} = useSelector((state) => state.app);
+
   return (
     <div className="eventsDetail">
       <Header />
       <SearchButton/>
       <CitiesButton/>
-      <div>Home/Etkinlik/Sanatçı</div>
+      <div className="topTitle">Home/Etkinlik/Sanatçı</div>
       <div className="eventsDetailMain">
-        <div className="eventsDetailLeft">LEFT</div>
+        <div className="eventsDetailLeft"><img src={events[0]?.img}/></div>
         <div className="eventsDetailRight">
           <div className="eventsDetailText">
             <div className="eventsDetailTop">
               <div className="eventsName">
-                <h3>Etkinlik Adı</h3>
+                <h3>{events[0]?.title}</h3>
                 <div className="eventType">
                   <mat-icon
                     role="img"
@@ -50,16 +54,12 @@ const EventsDetay = () => {
                       ></path>
                     </svg>
                   </mat-icon>
-                  <p>Etkinlik Türü</p>
+                  <p>{events[0]?.name}</p>
                 </div>
               </div>
               <div className="eventsPoint">
                 <p>İzlediyseniz Siz de Alkışlayın</p>
-                <button
-                  _ngcontent-serverapp-c69=""
-                  class="rank ng-star-inserted"
-                  data-title="1"
-                >
+                <button>
                   <mat-icon
                     _ngcontent-serverapp-c69=""
                     role="img"
@@ -106,11 +106,7 @@ const EventsDetay = () => {
                     </svg>
                   </mat-icon>
                 </button>
-                <button
-                  _ngcontent-serverapp-c69=""
-                  class="rank ng-star-inserted"
-                  data-title="1"
-                >
+                <button>
                   <mat-icon
                     _ngcontent-serverapp-c69=""
                     role="img"
@@ -157,11 +153,7 @@ const EventsDetay = () => {
                     </svg>
                   </mat-icon>
                 </button>
-                <button
-                  _ngcontent-serverapp-c69=""
-                  class="rank ng-star-inserted"
-                  data-title="1"
-                >
+                <button>
                   <mat-icon
                     _ngcontent-serverapp-c69=""
                     role="img"
@@ -208,11 +200,7 @@ const EventsDetay = () => {
                     </svg>
                   </mat-icon>
                 </button>
-                <button
-                  _ngcontent-serverapp-c69=""
-                  class="rank ng-star-inserted"
-                  data-title="1"
-                >
+                <button>
                   <mat-icon
                     _ngcontent-serverapp-c69=""
                     role="img"
@@ -259,11 +247,7 @@ const EventsDetay = () => {
                     </svg>
                   </mat-icon>
                 </button>
-                <button
-                  _ngcontent-serverapp-c69=""
-                  class="rank ng-star-inserted"
-                  data-title="1"
-                >
+                <button >
                   <mat-icon
                     _ngcontent-serverapp-c69=""
                     role="img"
@@ -315,7 +299,7 @@ const EventsDetay = () => {
             </div>
             <div className="eventsText">
               <h5>Etkinlik Detayı</h5>
-              <p>bilgi</p>
+              <p>{events[0]?.city}</p>
             </div>
             <div className="eventDetailList">
               <ul>
@@ -338,12 +322,12 @@ const EventsDetay = () => {
               </div>
               <div className="buyDate">
                 <div className="date">
-                  <p>Tarih</p>
-                  <p className="location">Yer</p>
+                  <p>{events[0]?.date}</p>
+                  <p className="location">{events[0]?.location}</p>
                   <span>Koltuk Seçmeli</span>
                 </div>
                 <div className="price">
-                  <p>Fiyat</p>
+                  <p>{events[0]?.price}</p>
                   <button>
                     <svg
                       width="100%"
@@ -377,16 +361,16 @@ const EventsDetay = () => {
             <div onClick={ArtistDetailClick} className="artist">
               <h3>Sanatçılar</h3>
               <div className="artistDetail">
-                <p>Sanatçı Resmi</p>
+                <p><img src={events[0]?.img}/></p>
                 <div className="artistText">
-                  <p>Santçı İsmi</p>
-                  <p>Etkinlik Türü</p>
+                  <p>{events[0]?.name}</p>
+                  <p>{events[0]?.location}</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="eventsLocation">
-            <h3>Konum İsmi</h3>
+            <h3>{events[0]?.location}</h3>
             <div className="location">
               <p>
                 <svg
