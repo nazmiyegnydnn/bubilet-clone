@@ -10,7 +10,7 @@ import { Tabs } from 'antd';
 import UserIcon from "../../images/UserIcon.png" 
 
 
-const Member = ({basketData, setBasketData ,basketFavorites}) => {
+const Member = ({basketData}) => {
   const userStorageData = JSON.parse(localStorage.getItem("userData"))
 
  
@@ -27,12 +27,12 @@ const Member = ({basketData, setBasketData ,basketFavorites}) => {
     {
       key: '2',
       label: 'Biletlerim',
-      children: <Tickets  basketData={basketData} setBasketData={setBasketData}></Tickets>,
+      children: <Tickets  basketData={basketData}></Tickets>,
   },
     {
       key: '3',
       label: 'Favoriler',
-      children: <Favorite basketFavorites={basketFavorites}></Favorite>,
+      children: <Favorite></Favorite>,
     },
     {
       key: '4',

@@ -23,11 +23,11 @@ import SearchButton from '../searchButton/SearchButton'
 import {
   filterEventsByPrice,
   filterEventsByDate,
+  handleSelectedData
 } from "../../appSlice";
 import CitiesButton from "../citiesButton/CitiesButton";
 
-
-const CitiesDetail = ({basketData, setBasketData}) => {
+const CitiesDetail = ({ setBasketData ,cityData , setCityData}) => {
  const  category =[
   {
     id: 1,
@@ -64,9 +64,9 @@ const CitiesDetail = ({basketData, setBasketData}) => {
   const dispatch = useDispatch();
   const { name } = useParams();
   const {} = useSelector((state) => state.app);
-  const [cityData, setCityData] = useState([])
   const [layout, setLayout] = useState('');
   const {events} = useSelector((state) => state.app);
+  const [addedToCartMessage, setAddedToCartMessage] = useState("");
 
 
   // console.log(events)
@@ -99,6 +99,7 @@ const CitiesDetail = ({basketData, setBasketData}) => {
       ),
     },
   ];
+  
 
   const citiesDetailData = (categoryName) => {
     const filterCitiesEvents = events?.filter((el) => el.name === categoryName);
@@ -107,12 +108,18 @@ const CitiesDetail = ({basketData, setBasketData}) => {
   }
 
   const handleEventsDetail = (item) => {
+    const filterItem = cityData.length > 0 ? cityData?.filter(cityFilter => item.id === cityFilter.id)
+                                           : events.filter(eventsFilter => item.id === eventsFilter.id)
+
+    dispatch(handleSelectedData(filterItem))
     navigate(`/eventsDetay/${item.id}`);
   };
 
   const basketPlus = (item) => {
     setBasketData((prevState) => [...prevState, item]);
+    setAddedToCartMessage(`${item.name} sepete eklendi!`);
   };
+  console.log(addedToCartMessage)
 
   return (
     <div className="citiesDetail" >
@@ -308,10 +315,14 @@ const CitiesDetail = ({basketData, setBasketData}) => {
                   </button>
                 </div>
               ))
+              
           }
           
         </div>
       </div>
+      {addedToCartMessage && (
+        <div style={{ color: "green" }}>{addedToCartMessage}</div>
+      )}
       <Footer />
     </div>
   );

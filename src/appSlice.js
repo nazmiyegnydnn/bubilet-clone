@@ -365,6 +365,7 @@ const initialState = {
       city: "Ankara",
     },
   ],
+  selectedData: [],
   isLoggedin:false,
 };
 
@@ -372,6 +373,9 @@ export const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
+    handleSelectedData: (state, action) => {
+      state.selectedData = action.payload;
+    },
     handleLoggedin: (state, action) => {
       state.isLoggedin = action.payload;
     },
@@ -421,7 +425,9 @@ export const {
   filterEventsByName,
   filterEventsByPrice,
   filterEventsByDate,
-  handleLoggedin
+  handleLoggedin,
+  handleSelectedData
 } = appSlice.actions;
+
 
 export default appSlice.reducer; //appslice kendi dosyomızın ismine göre değişitir.

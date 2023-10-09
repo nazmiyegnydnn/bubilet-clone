@@ -174,7 +174,13 @@
             }
         }
         }
-        
+        .cart-message{
+            width:400px;
+            height: 200px;
+            background-color: white;
+            color:#2ED87B;
+            z-index: 1;
+        }
     }
     .eventCardGrid{
         @include cardGrid;

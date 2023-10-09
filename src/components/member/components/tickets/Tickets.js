@@ -11,18 +11,19 @@ const Tickets = ( {basketData } ) => {
   const homePage = ()=>{
     navigate(`/citiesDetail`);
    }
-  console.log(basketData)
+
 
 
   return (
     <div className='tickets'>
     <div className='events'>
-         {basketData?.length > 0? (
+         {basketData?.length > 0 ? (
                 <div className='activeEvents'>
                 <h3>Aktif Etkinliklerim</h3>
                 <span>{basketData.length} Biletiniz var</span>
                 <p>Giriş biletlerinizi aşağıda görebilirsiniz!</p>
-                {
+               <div className='ticketsCard'>
+               {
                   basketData.map((el) =>(
                     <div className='ticket'>
                     <h2>BİLETLERİM</h2>
@@ -33,7 +34,7 @@ const Tickets = ( {basketData } ) => {
                    </div>
                   ))
                 }
-             
+               </div>
             </div>
             ) : (
               <div className='tickestOrder'>

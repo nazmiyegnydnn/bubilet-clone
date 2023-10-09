@@ -14,7 +14,13 @@ const EventsDetay = () => {
   const ArtistDetailClick = () => {
     navigate("/artistDetail");
   };
-    const {events} = useSelector((state) => state.app);
+
+  const handleBuy =() =>{
+    navigate('/memberProfile')
+  }
+
+
+    const {selectedData} = useSelector((state) => state.app);
 
   return (
     <div className="eventsDetail">
@@ -23,12 +29,12 @@ const EventsDetay = () => {
       <CitiesButton/>
       <div className="topTitle">Home/Etkinlik/Sanatçı</div>
       <div className="eventsDetailMain">
-        <div className="eventsDetailLeft"><img src={events[0]?.img}/></div>
+        <div className="eventsDetailLeft"><img src={selectedData[0]?.img}/></div>
         <div className="eventsDetailRight">
           <div className="eventsDetailText">
             <div className="eventsDetailTop">
               <div className="eventsName">
-                <h3>{events[0]?.title}</h3>
+                <h3>{selectedData[0]?.title}</h3>
                 <div className="eventType">
                   <mat-icon
                     role="img"
@@ -54,7 +60,7 @@ const EventsDetay = () => {
                       ></path>
                     </svg>
                   </mat-icon>
-                  <p>{events[0]?.name}</p>
+                  <p>{selectedData[0]?.name}</p>
                 </div>
               </div>
               <div className="eventsPoint">
@@ -299,7 +305,7 @@ const EventsDetay = () => {
             </div>
             <div className="eventsText">
               <h5>Etkinlik Detayı</h5>
-              <p>{events[0]?.city}</p>
+              <p>{selectedData[0]?.city}</p>
             </div>
             <div className="eventDetailList">
               <ul>
@@ -322,13 +328,13 @@ const EventsDetay = () => {
               </div>
               <div className="buyDate">
                 <div className="date">
-                  <p>{events[0]?.date}</p>
-                  <p className="location">{events[0]?.location}</p>
+                  <p>{selectedData[0]?.date}</p>
+                  <p className="location">{selectedData[0]?.location}</p>
                   <span>Koltuk Seçmeli</span>
                 </div>
                 <div className="price">
-                  <p>{events[0]?.price}</p>
-                  <button>
+                  <p>{selectedData[0]?.price}</p>
+                  <button onClick={handleBuy}> 
                     <svg
                       width="100%"
                       height="100%"
@@ -361,16 +367,16 @@ const EventsDetay = () => {
             <div onClick={ArtistDetailClick} className="artist">
               <h3>Sanatçılar</h3>
               <div className="artistDetail">
-                <p><img src={events[0]?.img}/></p>
+                <p><img src={selectedData[0]?.img}/></p>
                 <div className="artistText">
-                  <p>{events[0]?.name}</p>
-                  <p>{events[0]?.location}</p>
+                  <p>{selectedData[0]?.name}</p>
+                  <p>{selectedData[0]?.location}</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="eventsLocation">
-            <h3>{events[0]?.location}</h3>
+            <h3>{selectedData[0]?.location}</h3>
             <div className="location">
               <p>
                 <svg
