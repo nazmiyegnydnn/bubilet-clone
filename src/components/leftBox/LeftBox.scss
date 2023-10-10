@@ -82,7 +82,7 @@
      }
      .leftbox-button{
         button{
-            color:lightgray;
+            color:gray;
             background-color: white;
             height: 50px;
             font-size: 16px;
@@ -93,3 +93,166 @@
         }
      }
 }
+
+// * RESPONSİVE */
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) {
+    .leftbox-menu{
+        .leftbox-logo{
+            img{
+                display: none;
+            }
+        }
+        .leftBox-search{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            margin: 0 auto;
+            background-color: #2ED87B;
+            height: 50px;
+            margin-left: 0;
+            border-radius: 0;
+            padding: 40px;
+            .lefBoxSearchButton{
+                background-color: white;
+                border-radius: 25px;
+                width: 100%;
+                position: fixed;
+            }
+        }
+        .leftbox-title{
+            display: none;
+        }
+        .leftbox-button{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            margin: 0 auto;
+            background-color: #2ED87B;
+            border-radius: 0;
+            padding: 10px;
+            .leftbox-close{
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+    }
+   
+}
+@media (min-width: 576px) and (max-width: 767.98px) { 
+    .leftbox-menu{
+        .leftbox-logo{
+            img{
+                display: none;
+            }
+        }
+        .leftBox-search{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            margin: 0 auto;
+            background-color: #2ED87B;
+            height: 50px;
+            margin-left: 0;
+            border-radius: 0;
+            padding: 40px;
+            .lefBoxSearchButton{
+                background-color: white;
+                border-radius: 25px;
+                width: 100%;
+            }
+        }
+        .leftbox-title{
+            display: none;
+        }
+        .leftbox-button{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            margin: 0 auto;
+            background-color: #2ED87B;
+            border-radius: 0;
+            padding: 10px;
+            .leftbox-close{
+                margin: 0 auto;
+                width: 100%;
+            }
+        }
+    }
+    
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+    .leftbox-menu{
+        .leftbox-logo{
+            img{
+                display: none;
+            }
+        }
+        .leftBox-search{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            margin: 0 auto;
+            background-color: #2ED87B;
+            height: 50px;
+            margin-left: 0;
+            border-radius: 0;
+            padding: 40px;
+            .lefBoxSearchButton{
+                background-color: white;
+                border-radius: 25px;
+                width: 100%;
+            }
+        }
+        .leftbox-title{
+            display: none;
+        }
+        .leftbox-button{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+            margin: 0 auto;
+            background-color: #2ED87B;
+            border-radius: 0;
+            padding: 10px;
+            .leftbox-close{
+                margin: 0 auto;
+                width: 100px;
+            }
+        }
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .leftbox-menu{
+        .leftBox-search{
+            height: 50px;
+            display: flex;
+            .lefBoxSearchButton{
+             height: 50px;
+             width: 300px;
+         }
+         }
+    }
+ }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+ }
+ 

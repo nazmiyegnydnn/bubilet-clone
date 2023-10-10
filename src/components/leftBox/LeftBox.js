@@ -28,6 +28,7 @@ const LeftBox = () => {
             :""
       }
       <div className="leftBox-search">
+        <div className="lefBoxSearchButton">
         <Input
           placeholder="Şehir Ara"
           onSearch={onSearch}
@@ -36,6 +37,7 @@ const LeftBox = () => {
         <Tooltip title="search">
           <Button shape="circle" icon={<SearchOutlined />} />
         </Tooltip>
+        </div>
       </div>
       <div className="leftbox-title">
         <h1>Şehir Seç</h1>
